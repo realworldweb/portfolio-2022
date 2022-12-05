@@ -10,11 +10,12 @@ import Head from 'next/head'
 /*layout*/
 import Layout from '../layouts/main'
 
-
+/*components*/
+import Hero from '../components/hero';
 const  Home: NextPageWithLayout = () => {
   return (
     <main>
-      main content
+    <Hero/>
     </main>
   )
 }

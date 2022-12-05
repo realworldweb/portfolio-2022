@@ -84,7 +84,7 @@ p {
 }
 
 .section-btn:hover {
-  background: #E3AE57;
+  background: $yellow;
   border-color: transparent;
   color: #ffffff;
 }
@@ -122,11 +122,11 @@ p {
 }
 
 .color-yellow {
-  color: #E3AE57;
+  color: $yellow;
 }
 
 .bg-yellow {
-  background: #E3AE57;
+  background: $yellow;
 }
 
 .bg-white {
@@ -148,14 +148,14 @@ html{
 }
 
 a {
-  color: #E3AE57;
+  color: $yellow;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
   text-decoration: none !important;
 }
 a:hover, a:active, a:focus {
-  color: #E3AE57;
+  color: $yellow;
   outline: none;
 }
 
