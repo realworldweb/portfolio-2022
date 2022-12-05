@@ -25,11 +25,11 @@ function Header() {
 	};
 
 	return (
-		<header className={`navbar navbar-fixed-top ${Styles.customNavbar}`} ref={navToggle}>
+		<header className={`navbar fixed-top ${Styles.customNavbar}`} ref={navToggle}>
 			<div
 				className={`mx-auto justify-content-start ${Styles.container}`}
 			>
-				<div className='navbar-header'>
+				<div className='d-flex position-relative w-100 justify-content-between'>
 					<button
 						className={`d-inline-block d-md-none position-absolute ${Styles.navbarToggle}`}
 						onClick={toggleNavbar}
