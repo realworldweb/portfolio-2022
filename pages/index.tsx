@@ -4,19 +4,25 @@ import type { ReactElement } from 'react';
 
 /*next*/
 import type { NextPageWithLayout } from './_app';
-import Image from 'next/image';
 import Head from 'next/head'
+import dynamic from 'next/dynamic';
 
 /*layout*/
 import Layout from '../layouts/main'
 
 /*components*/
 import Hero from '../components/hero';
+const About = dynamic(() => import(/* webpackChunkName: "about" */ '../components/about'));
+const Services = dynamic(() => import(/* webpackChunkName: "services" */ '../components/services'))
+ 
+
 const  Home: NextPageWithLayout = () => {
   return (
     <main>
     <Hero/>
-    </main>
+    <About/>
+    <Services/>
+    </main> 
   )
 }
 

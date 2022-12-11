@@ -1,0 +1,32 @@
+
+
+.about{
+    strong,
+    span {
+  font-weight: bold;
+  display: inline-block;
+  padding-bottom: 8px;
+
+}
+}
+
+.aboutImg {
+   
+}
+
+.aboutThumb,
+.skillThumb {
+  padding: 22px 32px 32px 32px;
+}
+
+.progress {
+  background: #ffffff;
+  border-radius: 0px;
+  box-shadow: none;
+  height: 2px;
+}
+
+.progressBarPrimary {
+  background: #232B2B;
+}
+

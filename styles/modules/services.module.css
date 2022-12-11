@@ -1,0 +1,25 @@
+.service {
+  background: #E9724C;
+
+  p {
+  font-size: 0.7rem;
+  line-height: 20px;
+  font-weight: 300;
+  opacity: 0.8;
+  max-width: 78%;
+}
+
+h4{
+  font-weight: 900;
+  font-size: 0.8rem;
+  line-height: 30px;
+  text-shadow: 0.5px 0.5px #000;
+}
+
+}
+
+
+.serviceThumb {
+  padding: 52px 22px 52px 22px;
+}
+
