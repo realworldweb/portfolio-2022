@@ -1,0 +1,43 @@
+.experince {
+	background-color: #e9724c;
+}
+
+.education{
+    background-color: #E3AE57;
+}
+
+.content {
+	left: 3%;
+
+	h3 {
+		font-size: 1.3rem;
+	}
+
+    span{
+        color: #633;
+        font-weight: 900;
+        font-size: 0.8rem;
+    }
+
+	p {
+		left: 5%;
+		max-width: 85%;
+        font-size: 0.8rem;
+        opacity: 0.8
+	}
+}
+
+.link{
+    color: #633;
+    font-weight: 900;
+    left: 72%;
+
+    &:hover{
+        color: #f1e2d7;
+    }
+    span{
+        font-weight: inherit;
+        font-size: 1.6rem;
+        color: inherit;
+    }
+}
