@@ -1,5 +1,5 @@
 /*react*/
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 /*next*/
 import Link from 'next/link';
@@ -11,6 +11,8 @@ import Styles from '../styles/modules/header.module.css';
 function Header() {
 	const router = useRouter();
 	const { asPath } = router;
+
+	const [scroll, setScroll] = useState<number>(0)
 
 	const navToggle = useRef<HTMLButtonElement>(null);
 
@@ -24,8 +26,18 @@ function Header() {
 		}
 	};
 
+	useEffect(() => {
+		if(!window)return;
+
+		window.addEventListener('scroll', () => setScroll(window.scrollY));
+		
+
+        return () => {
+			window.removeEventListener('scroll', () => setScroll(window.scrollY));
+	} })
+
 	return (
-		<header className={`navbar fixed-top ${Styles.customNavbar}`} ref={navToggle}>
+		<header className={`navbar fixed-top ${scroll > 0 ? "bg-white": ""} ${Styles.customNavbar}`} ref={navToggle}>
 			<div
 				className={`mx-auto justify-content-start ${Styles.container}`}
 			>
@@ -84,7 +96,7 @@ function Header() {
 						<span />
 						<div className={Styles.splash}></div>
 					</button>
-					<a href='#' className={`d-inline-flex position-relative ml-2 mt-3 mt-md-0  ${Styles.customBrand}`}>
+					<a href='#' className={`d-inline-flex position-relative ml-2 mt-3 mt-md-0 ${Styles.customBrand} ${scroll > 0 ? Styles.customBrandSmall: ""}`}>
 						RealworldWeb
 					</a>
 				</div>

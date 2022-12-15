@@ -34,6 +34,12 @@
 	z-index: 10;
 }
 
+.customBrandSmall {
+	color: $yellow;
+	text-shadow: 2px 2px #fff;
+	font-size: 1.5rem;
+}
+
 .menu {
 	display: inline-flex;
 	flex-direction: column;
