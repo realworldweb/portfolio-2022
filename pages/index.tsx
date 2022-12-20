@@ -30,7 +30,6 @@ const  Home: NextPageWithLayout = () => {
     <Experince/>
     <Education/>
     <Quotes/>
-    <Contact/>
     </main> 
   )
 }

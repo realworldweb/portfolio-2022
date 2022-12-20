@@ -1,3 +1,4 @@
+import Contact from "../components/contact";
 import Header from "../components/header";
 import { FC, ReactNode } from "react";
 
@@ -7,12 +8,12 @@ interface MyProps {
 
 const headerOnly : FC<MyProps> =  ({children}) => {
 
-    return <div className="d-flex flex-column w-100 position-relative" style={{height: "100vh"}}>
+    return <div className="d-flex flex-column w-100 position-relative">
         <header><Header/></header>
-        <div id="content" className="d-flex flex-column w-100 position-relative" style={{height: "100%"}}>
+        <div id="content" className="d-flex flex-column w-100 position-relative">
             {children}
         </div>
-        <footer></footer>
+        <footer><Contact/></footer>
     </div>
 
   }
