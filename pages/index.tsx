@@ -17,20 +17,26 @@ const Services = dynamic(() => import(/* webpackChunkName: "services" */ '../com
 const Experince = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/experince'));
 const Education = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/education'));
 const Quotes = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/quotes'));
-const Contact = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/contact'));
+
  
  
 
 const  Home: NextPageWithLayout = () => {
   return (
-    <main>
-    <Hero/>
-    <About/>
-    <Services/>
-    <Experince/>
-    <Education/>
-    <Quotes/>
-    </main> 
+  <>
+      <Head>
+          <title>Realworldweb portfolio</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
+      <main>
+      <Hero/>
+      <About/>
+      <Services/>
+      <Experince/>
+      <Education/>
+      <Quotes/>
+      </main> 
+  </>
   )
 }
 
