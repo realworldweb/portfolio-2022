@@ -39,7 +39,7 @@ function Header() {
 	return (
 		<header className={`navbar fixed-top w-100 ${Styles.customNavbar} ${scroll > 0 ? Styles.customNavbarScrolled: ""}`} ref={navToggle}>
 			<div
-				className={`mx-auto justify-content-start ${Styles.container}`}
+				className={`justify-content-start ${Styles.container}`}
 			>
 				<div className='d-flex position-relative w-100 justify-content-between'>
 					<button
