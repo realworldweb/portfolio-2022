@@ -15,8 +15,8 @@ import Hero from '../components/hero';
 const About = dynamic(() => import(/* webpackChunkName: "about" */ '../components/about'));
 const Services = dynamic(() => import(/* webpackChunkName: "services" */ '../components/services'));
 const Experince = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/experince'));
-const Education = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/education'));
-const Quotes = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/quotes'));
+const Education = dynamic(() => import(/* webpackChunkName: "education" */ '../components/education'));
+const Quotes = dynamic(() => import(/* webpackChunkName: "quotes" */ '../components/quotes'));
 
  
  

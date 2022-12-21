@@ -38,7 +38,7 @@ function About() {
 						</article>
 					</section>
 
-					<section className={`col-sm-6 ${Styles.projectThumb}`}>
+					<section className={`col-md-6 ${Styles.projectThumb}`}>
 						<article className={Styles.skillThumb}>
 							<div className=' section-title color-white'>
 								<h1>Projects</h1>

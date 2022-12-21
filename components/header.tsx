@@ -37,7 +37,7 @@ function Header() {
 	} })
 
 	return (
-		<header className={`navbar fixed-top ${scroll > 0 ? "bg-white": ""} ${Styles.customNavbar}`} ref={navToggle}>
+		<header className={`navbar fixed-top ${Styles.customNavbar} ${scroll > 0 ? Styles.customNavbarScrolled: ""}`} ref={navToggle}>
 			<div
 				className={`mx-auto justify-content-start ${Styles.container}`}
 			>

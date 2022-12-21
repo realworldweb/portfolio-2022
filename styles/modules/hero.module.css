@@ -18,12 +18,12 @@
 
 
 .tagline{
-    background: #f1e2d7;
+    background: $yellow;
     display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 500px;
   -webkit-box-align: center;
   -webkit-align-items: center;
