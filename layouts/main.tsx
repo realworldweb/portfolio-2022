@@ -17,10 +17,10 @@ const headerOnly : FC<MyProps> =  ({children}) => {
 
     return <div className="d-flex flex-column w-100 position-relative">
         <header className={Styles.header}><Header/></header>
-        <div id="content" className="d-flex flex-column w-100 position-relative">
+        <div id="content" className={`d-flex flex-column w-100 position-relative ${Styles.content}`}>
             {children}
         </div>
-        <footer><Contact/></footer>
+        <footer className={`d-flex flex-column w-100 position-relative ${Styles.content}`}><Contact/></footer>
     </div>
 
   }
