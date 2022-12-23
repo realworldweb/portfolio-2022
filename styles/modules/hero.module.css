@@ -1,7 +1,13 @@
 .home h1 {
   padding-top: 5px;
-	padding-bottom: 18px;
-  font-size: clamp(32px, 3.5vw, 60px);
+  padding-bottom: 18px;
+  font-size: 6.4vw;  
+}
+
+.home a:hover{
+  color:#fff; 
+  background-color: #000;
+
 }
 
 .heroImg {

@@ -28,11 +28,11 @@ function Hero() {
 					<div className='col-md-6 p-0'>
 						<div className={Styles.tagline}>
 							<div className='section-title mt-2'>
-								<h1>
-									Hello, I am <strong>Paul</strong> a frontend focused fullstack
+								<h1 className='d-block'>
+						Hello, I am <strong>Paul</strong> a frontend focused fullstack
 									developer.
 								</h1>
-								<p>
+								<p className='d-block'>
 									I am a frontend focused fullstack developer based in northern Ireland with a number of years experince working with HTML, CSS and Javascript.
                                              Most recently I have been using react with next.js to build fast immersive frontend experinces which can run in serverless enviorments like Netlify.
 								</p>

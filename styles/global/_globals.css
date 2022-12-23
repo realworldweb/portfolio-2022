@@ -3,12 +3,12 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-style: normal;
 	  font-weight: 300;
+    overflow-x: hidden;
 }
 
 html,body {
   width: 100%;
   height: fit-content;
-  overflow-x: hidden;
 }
 
 
@@ -95,6 +95,7 @@ p {
 }
 
 .parallax-section {
+  position: relative !important;
   background-attachment: fixed !important;
   background-size: cover !important;
 }

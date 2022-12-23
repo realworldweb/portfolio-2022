@@ -14,7 +14,7 @@ function Header() {
 
 	const [scroll, setScroll] = useState<number>(0)
 
-	const navToggle = useRef<HTMLButtonElement>(null);
+	const navToggle = useRef<HTMLDivElement>(null);
 
 	const toggleNavbar = () => {
 		if (!navToggle.current) return;
@@ -37,7 +37,7 @@ function Header() {
 	} })
 
 	return (
-		<header className={`navbar fixed-top w-100 ${Styles.customNavbar} ${scroll > 0 ? Styles.customNavbarScrolled: ""}`} ref={navToggle}>
+		<div className={`navbar w-100 ${Styles.customNavbar} ${scroll > 0 ? Styles.customNavbarScrolled: ""}`} ref={navToggle}>
 			<div
 				className={`justify-content-start ${Styles.container}`}
 			>
@@ -139,7 +139,7 @@ function Header() {
 					</li>
 				</ul>
 			</div>
-		</header>
+		</div>
 	);
 }
 

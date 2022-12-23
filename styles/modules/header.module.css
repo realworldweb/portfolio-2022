@@ -67,7 +67,8 @@
 	justify-content: center;
 	height: 100vh;
 	width: 100vw;
-	position: absolute;
+	z-index: -999;
+	position: fixed;
 
 
 	@media ($md) {
@@ -76,13 +77,13 @@
 		align-items: center;
 		position: relative;
 		min-width: 600px;
+		z-index: 10;
 	}
 }
 
 .standardLink {
 	opacity: 0;
 	transition: all 0.3s cubic-bezier(0, 0.995, 0.99, 1) 0.3s;
-	z-index: 10;
 	a {
 		color: white;
 		display: block;
@@ -119,7 +120,6 @@
 }
 
 .navbarToggle {
-	z-index: 10;
 	color: $yellow;
 	padding: 0;
 	border: 0;
@@ -193,17 +193,14 @@
 .customNavbarOpen {
 	.splash::after {
 		transform: scale(1);
+		z-index: 10;
 	}
 
-	.customBrand {
-		color: #fff;
-		text-shadow: 1px 1px #000;
-	}
 
 	.menuIcon {
 		color: $yellow;
 		transform: rotate(180deg);
-		z-index: 999;
+		z-index: 0;
 
 		&Circle {
 			stroke-dashoffset: 0;
@@ -223,7 +220,10 @@
 	
 	.menu {
 		display: inline-flex;
+		position: absolute;
 		visibility: visible;
+		z-index: 1000;
+		
 	}
 
 	.standardLink {

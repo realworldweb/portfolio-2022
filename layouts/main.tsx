@@ -1,6 +1,13 @@
+/*react*/
+import { FC, ReactNode } from "react";
+
+/*components*/
 import Contact from "../components/contact";
 import Header from "../components/header";
-import { FC, ReactNode } from "react";
+
+/*styles*/
+import Styles from "../styles/layouts/main.module.css";
+
 
 interface MyProps {
     children: ReactNode;
@@ -9,7 +16,7 @@ interface MyProps {
 const headerOnly : FC<MyProps> =  ({children}) => {
 
     return <div className="d-flex flex-column w-100 position-relative">
-        <header><Header/></header>
+        <header className={Styles.header}><Header/></header>
         <div id="content" className="d-flex flex-column w-100 position-relative">
             {children}
         </div>
