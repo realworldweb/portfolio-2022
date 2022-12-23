@@ -81,7 +81,8 @@
 		align-items: center;
 		position: relative;
 		min-width: 600px;
-		z-index: 10;
+		z-index: 9999;
+		visibility: visible;
 	}
 }
 
