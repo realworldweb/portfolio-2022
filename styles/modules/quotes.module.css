@@ -23,7 +23,18 @@
 .content {
   opacity: 0.8;
 
+  h2{
+    font-size: 1.3rem;
+    max-width: 90%;
+  }
+
   p{
     color: $yellow;
+    max-width: 90%;
+    font-size: 0.8rem;
+
+    @media ($md){
+      font-size: 1rem;
+    }
   }
 }

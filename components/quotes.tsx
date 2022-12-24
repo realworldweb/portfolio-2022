@@ -13,8 +13,8 @@ const Quotes = () => {
           <div className={`d-flex flex-column align-items-center w-100 ${Styles.content}`}>
               <SvgStar width="5rem" height="5rem"  />
                <div className="col-md-offset-1 col-md-10 col-sm-12">
-                    <h2 className='text-center'>Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to produce bigger and better idiots. So far, the universe is winning.</h2>
-                    <p className='text-center'>Money can&apos;t buy you love but it can help you compete in a global marketplace.</p>
+                    <h2 className='text-center mx-auto'>Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to produce bigger and better idiots. So far, the universe is winning.</h2>
+                    <p className='text-center mx-auto'>Money can&apos;t buy you love but it can help you compete in a global marketplace.</p>
                </div>
 
           </div>

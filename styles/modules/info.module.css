@@ -16,21 +16,22 @@
     span{
         color: #633;
         font-weight: 900;
-        font-size: 0.8rem;
+        font-size: 0.8rem; 
+
     }
 
 	p {
 		left: 5%;
 		max-width: 85%;
         font-size: 0.8rem;
-        opacity: 0.8
+        opacity: 0.8;
 	}
 }
 
 .link{
     color: #633;
     font-weight: 900;
-    left: 72%;
+    right: -48%;
 
     &:hover{
         color: #f1e2d7;

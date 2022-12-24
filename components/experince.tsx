@@ -29,7 +29,7 @@ const Experince = () => {
 
 							<div>
 								<div className='media-body'>
-									<div className='d-flex align-items-center position-relative'>
+									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
 										<SvgExperince width='2rem' height='2rem' fill='#633' />
 										&nbsp;
 										<h3 className='d-block m-0'>React developer </h3>
@@ -38,11 +38,11 @@ const Experince = () => {
 											(Livetree)
 										</h4>
 										&nbsp;
-										<span className='position-relative m-0'>
+										<span className='position-relative mx-auto m-md-0'>
 											Jun 2022 - present
 										</span>
 									</div>
-									<p className='color-white position-relative'>
+									<p className='color-white position-relative mx-auto mx-md-0 p-2'>
 										Lead frontend developer for a web3 social network. In this
 										role I am working with react and next.js to create an
 										immersive frontend web3 based social network. I have used
@@ -54,7 +54,7 @@ const Experince = () => {
 
 							<div>
 								<div className='media-body'>
-									<div className='d-flex align-items-center position-relative'>
+									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
 										<SvgExperince width='2rem' height='2rem' fill='#633' />
 										&nbsp;
 										<h3 className='d-block m-0'>React developer </h3>
@@ -63,11 +63,11 @@ const Experince = () => {
 											(Browsio)
 										</h4>
 										&nbsp;
-										<span className='position-relative m-0'>
+										<span className='position-relative mx-auto m-md-0'>
 											Apr 2022 - Jul 2022
 										</span>
 									</div>
-									<p className='color-white position-relative'>
+									<p className='color-white position-relative mx-auto mx-md-0 p-2'>
 										A volunteer position with a charity auction website. My main
 										roles were managing the handover of the site from a
 										development company in india. Creating a digital ocean
