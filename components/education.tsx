@@ -27,20 +27,16 @@ const Education = () => {
 
 							<div>
 								<div className='media-body'>
-									<div className='d-flex align-items-center position-relative'>
+									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
 										<SvgLearning width='2rem' height='2rem' fill='#633' />
 										&nbsp;
 										<h3 className='d-block m-0'>
-											Learning end to end testing with Jest
+										end to end testing Jest
 										</h3>
 										&nbsp;
-										<h4 className='color-white position-relative mt-n1'>
-											(Javascript)
-										</h4>
-										&nbsp;
-										<span className='position-relative m-0'>Linkedin Learning</span>
+										<span className='position-relative mx-auto m-md-0'>Linkedin Learning</span>
 									</div>
-									<p className='color-white position-relative'>
+									<p className='color-white position-relative mx-auto mx-md-0 p-2'>
 										A extensive course on jest a testing suite for javascript
 										node.js projects. How to effectivlely use jest to code test
 										for end to end and unit testing of current javascript code.
@@ -50,18 +46,14 @@ const Education = () => {
 
 							<div>
 								<div className='media-body'>
-									<div className='d-flex align-items-center position-relative'>
+									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative' style={{ width: "96%"}}>
 										<SvgLearning width='2rem' height='2rem' fill='#633' />
 										&nbsp;
 										<h3 className='d-block m-0'>Typescript and react 2022</h3>
 										&nbsp;
-										<h4 className='color-white position-relative mt-n1'>
-											(Typescript)
-										</h4>
-										&nbsp;
-										<span className='position-relative m-0'>Udemy</span>
+										<span className='position-relative mx-auto m-md-0'>Udemy</span>
 									</div>
-									<p className='color-white position-relative'>
+									<p className='color-white position-relative mx-auto mx-md-0 p-2'>
 										A deep dive into modern Typescript and tools such as
 										interfaces , enums, truples and unions. With a emphasis
 										placed on dealing with type within a react js and the
@@ -70,7 +62,7 @@ const Education = () => {
 								</div>
 								<Link href='/experince'>
 									<h4
-										className={`d-flex position-relative align-items-center ${Styles.link}`}
+										className={`d-flex position-relative align-items-center ${Styles.link} ${Styles.linkMore}`}
 									>
 										See more&nbsp;<span className='d-inline position-relative pb-1'>&raquo;</span>
 									</h4>
