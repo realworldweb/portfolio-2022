@@ -53,7 +53,7 @@ const Experince = () => {
 							</div>
 
 							<div>
-								<div className='media-body'>
+								<div className='media-body d-flex flex-column'>
 									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
 										<SvgExperince width='2rem' height='2rem' fill='#633' />
 										&nbsp;
@@ -78,7 +78,7 @@ const Experince = () => {
 								</div>
 								<Link href='/experince'>
 									<h4
-										className={`d-flex position-relative align-items-center ${Styles.link}`}
+										className={`d-flex w-100 position-relative justify-content-end align-items-center p-4 ${Styles.link}`}
 									>
 										More details&nbsp;<span className='d-inline position-relative pb-1'>&raquo;</span>
 									</h4>

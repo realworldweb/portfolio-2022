@@ -45,7 +45,7 @@ const Education = () => {
 							</div>
 
 							<div>
-								<div className='media-body'>
+								<div className={`media-body d-flex flex-column`}>
 									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative' style={{ width: "96%"}}>
 										<SvgLearning width='2rem' height='2rem' fill='#633' />
 										&nbsp;
@@ -62,7 +62,7 @@ const Education = () => {
 								</div>
 								<Link href='/experince'>
 									<h4
-										className={`d-flex position-relative align-items-center ${Styles.link} ${Styles.linkMore}`}
+										className={`d-flex w-100 position-relative justify-content-end p-3 align-items-center ${Styles.link}`}
 									>
 										See more&nbsp;<span className='d-inline position-relative pb-1'>&raquo;</span>
 									</h4>
