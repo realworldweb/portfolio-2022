@@ -16,15 +16,14 @@ const Contact = () => {
 	return (
 		<section
 			id='contact'
-			className={`parallax-section d-flex position-relative bg-dark p-5 ${Styles.contact}`}
+			className={`d-flex position-relative w-100 bg-dark py-5 p-md-5 ${Styles.contact}`}
 		>
 			<div className='d-flex position-relative w-100'>
 				<div
-					className='d-flex position-relative w-100'
-					style={{ height: 'fit-content' }}
+					className='d-flex flex-column align-items-center position-relative w-100'
 				>
 					<div
-						className={`d-flex position-relative col-md-6 col-sm-12 ${Styles.contactFormContainer}`}
+						className={`d-flex position-relative mx-auto  ${Styles.contactFormContainer}`}
 					>
 						<div className={`d-flex pt-2 flex-column ${Styles.contactForm}`}>
 							<div className='d-flex flex-column position-relative'>
