@@ -15,7 +15,7 @@ const Education = () => {
 			<div className='d-flex w-100 position-relative'>
 				<div className='w-100 d-flex'>
 					<div
-						className={`col-md-6 position-relative pt-2 col-sm-6 ${Styles.content}`}
+						className={` col-12 col-md-6 position-relative pt-2 ${Styles.content}`}
 					>
 						<div className='color-white education-thumb'>
 							<div>
@@ -71,7 +71,7 @@ const Education = () => {
 						</div>
 					</div>
 
-					<div className=' position-relative col-md-6 col-sm-6'>
+					<div className='d-none d-md-flex position-relative col-md-6'>
 						<Image src={EducationImage} alt='my education' fill />
 					</div>
 				</div>
