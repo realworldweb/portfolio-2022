@@ -62,7 +62,7 @@ const Education = () => {
 								</div>
 								<Link href='/experince'>
 									<h4
-										className={`d-flex w-100 position-relative justify-content-end p-4 align-items-center ${Styles.link}`}
+										className={`d-flex w-100 position-relative justify-content-end p-4 p-sm-5 align-items-center ${Styles.link}`}
 									>
 										See more&nbsp;<span className='d-inline position-relative pb-1'>&raquo;</span>
 									</h4>

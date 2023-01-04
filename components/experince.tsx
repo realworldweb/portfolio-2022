@@ -78,7 +78,7 @@ const Experince = () => {
 								</div>
 								<Link href='/experince'>
 									<h4
-										className={`d-flex w-100 position-relative justify-content-end align-items-center p-4 ${Styles.link}`}
+										className={`d-flex w-100 position-relative justify-content-end align-items-center p-4 p-sm-5 ${Styles.link}`}
 									>
 										More details&nbsp;<span className='d-inline position-relative pb-1'>&raquo;</span>
 									</h4>

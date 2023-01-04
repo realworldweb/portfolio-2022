@@ -94,7 +94,7 @@ function Header() {
 						<span />
 						<span />
 						<span />
-						<div className={Styles.splash}></div>
+						<div className={Styles.splash} />
 					</button>
 					<a href='#' className={`d-inline-flex position-relative ml-2 mt-3 mt-md-0 ${Styles.customBrand} ${scroll > 0 ? Styles.customBrandSmall: ""}`}>
 						RealworldWeb
@@ -135,7 +135,7 @@ function Header() {
 							asPath === '/contact' ? Styles.activeLink : ''
 						}`}
 					>
-						<Link href='#contact'>Contact</Link>
+						<a href='#contact'>Contact</a>
 					</li>
 				</ul>
 			</div>

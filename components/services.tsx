@@ -6,7 +6,7 @@ function Services() {
     <section id="service" className={`parallax-section ${Styles.service}`}>
      <div className="d-flex w-100">
           <div className="row">
-               <div className="bg-yellow col-md-3 col-sm-6">
+               <div className="col-md-3 col-sm-6">
                     <div className={`color-white d-flex flex-column align-items-center ${Styles.serviceThumb}`}>
                          <SvgHTML5 width="5rem" height="5rem" />
                               <h4>HTML & CSS</h4>
@@ -14,7 +14,7 @@ function Services() {
                     </div>
                </div>
 
-               <div className="col-md-3 col-sm-6">
+               <div className="bg-dark col-md-3 col-sm-6">
                     <div className={`color-white d-flex flex-column align-items-center ${Styles.serviceThumb}`}>
                          <SvgReact width="5rem" height="5rem" />
                               <h4>Javascript & React </h4>
@@ -22,15 +22,15 @@ function Services() {
                     </div>
                </div>
 
-               <div className="bg-dark col-md-3 col-sm-6">
-                    <div className={`color-white d-flex flex-column align-items-center ${Styles.serviceThumb}`}>
+               <div className="bg-white col-md-3 col-sm-6">
+                    <div className={`color-dark d-flex flex-column align-items-center ${Styles.serviceThumb}`}>
                          <SvgFirebase width="5rem" height="5rem" />
                               <h4>Firebase & MongoDB</h4>
-                              <p className="color-white d-block position-relative text-center">I have previously work with both Firebase and MongoDB to manage and preform CRUD operations from my frontend projects.</p>
+                              <p className="color-dark d-block position-relative text-center">I have previously work with both Firebase and MongoDB to manage and preform CRUD operations from my frontend projects.</p>
                     </div>
                </div>
 
-               <div className="bg-white col-md-3 col-sm-6">
+               <div className="bg-yellow col-md-3 col-sm-6">
                     <div className={`d-flex flex-column align-items-center ${Styles.serviceThumb}`} >
                          <SvgNodejs width="5rem" height="5rem" />
                               <h4>NodeJS & Webpack</h4>
