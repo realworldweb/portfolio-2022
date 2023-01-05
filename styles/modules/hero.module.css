@@ -2,6 +2,10 @@
   padding-top: 5px;
   padding-bottom: 18px;
   font-size: 6.4vw;  
+
+  @media($md){
+	font-size: 4.6vw;
+  }
 }
 
 .home a:hover{
