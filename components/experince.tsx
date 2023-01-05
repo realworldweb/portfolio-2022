@@ -14,12 +14,12 @@ const Experince = () => {
 		<section id='experience' className={`parallax-section ${Styles.experince}`}>
 			<div className='d-flex position-relative w-100'>
 				<div className='w-100 d-flex'>
-					<div className='position-relative d-none d-md-flex col-md-6'>
+					<div className='position-relative d-none d-md-flex col-md-4 col-lg-6'>
 						<Image src={ExperinceImage} alt='my experince' fill />
 					</div>
 
 					<div
-						className={` col-12 col-md-6 position-relative pt-2 ${Styles.content}`}
+						className={` col-12 col-md-8 col-lg-6 position-relative pt-2 ${Styles.content}`}
 					>
 						<div className={`color-white`}>
 							<div>
