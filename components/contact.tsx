@@ -20,7 +20,7 @@ const Contact = () => {
 		>
 			<div className='d-flex position-relative w-100'>
 				<div
-					className='d-flex flex-column align-items-center position-relative w-100'
+					className='d-flex flex-column flex-md-row flex-md-wrap align-items-center position-relative w-100'
 				>
 					<div
 						className={`d-flex position-relative mx-auto  ${Styles.contactFormContainer}`}
@@ -117,7 +117,7 @@ const Contact = () => {
 							</p>
 						</div>
 					</div>
-					<div className={`position-relative ${Styles.contactThumb}`}>
+					<div className={`position-relative mx-auto ${Styles.contactThumb}`}>
 						<div>
 							<h2 className='color-white'>Realworldweb</h2>
 						</div>
