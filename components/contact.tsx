@@ -1,16 +1,55 @@
+/*react*/
+import { useState } from 'react';
+
 /*next*/
 import Link from 'next/link';
 
+/*tools*/
+import axios from 'axios';
+
 /*types*/
-import { formEvent } from '../lib/constants/event-types';
+import { formEvent, changeEvent } from '../lib/constants/event-types';
 
 /*styles*/
 import Styles from '../styles/modules/contact.module.css';
 import { SvgEnvelope, SvgGithub, SvgLinkedin, SvgPhone } from './svgs';
 
 const Contact = () => {
+
+	const [email, setEmail] = useState<string>("");
+	const [name, setName] = useState<string>("");
+	const [phone, setPhone] = useState<string>("");
+	const [subject, setSubject] = useState<string>("");
+	const [message, setMessage] = useState<string>("");
+	
+
 	const handleContact = (e: formEvent) => {
 		e.preventDefault();
+
+		const data = {
+			email,
+			name,
+            message,
+            subject,
+			phone,
+		}
+
+		const axiosConfig = {
+			headers: {
+				'Content-Type': 'application/json;charset=UTF-8',
+				"Access-Control-Allow-Origin": "*",
+			}
+		  };
+		  
+
+		axios.post('/api/send-email', data, axiosConfig).then((res) => {
+			console.log(res);
+		  })
+		  .catch((err) => {
+			console.error(err)
+		  })
+
+
 	};
 
 	return (
@@ -40,6 +79,8 @@ const Contact = () => {
 								>
 									<div>
 										<input
+										    value={name}
+											onChange={ (e: changeEvent ) => setName(e.target.value)}
 											name='fullname'
 											type='text'
 											className='form-control'
@@ -51,9 +92,32 @@ const Contact = () => {
 										<input
 											name='email'
 											type='email'
+											onChange={ (e: changeEvent) => setEmail(e.target.value)}
 											className='form-control'
 											id='email'
 											placeholder='Your Email'
+										/>
+									</div>
+									<div>
+										<input
+										    value={phone}
+											onChange={ (e: changeEvent ) => setPhone(e.target.value)}
+											name='phone'
+											type='text'
+											className='form-control'
+											id='phone'
+											placeholder='Your Number'
+										/>
+									</div>
+									<div>
+										<input
+										    value={subject}
+											onChange={ (e: changeEvent ) => setSubject(e.target.value)}
+											name='subject'
+											type='text'
+											className='form-control'
+											id='subject'
+											placeholder='message subject'
 										/>
 									</div>
 									<div>
@@ -61,6 +125,7 @@ const Contact = () => {
 											name='message'
 											rows={5}
 											className='form-control'
+											onChange={ (e: changeEvent) => setMessage(e.target.value)}
 											id='message'
 											placeholder='Write your message...'
 										/>
