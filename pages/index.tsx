@@ -11,12 +11,12 @@ import dynamic from 'next/dynamic';
 import Layout from '../layouts/main'
 
 /*components*/
-import Hero from '../components/hero';
-const About = dynamic(() => import(/* webpackChunkName: "about" */ '../components/about'));
-const Services = dynamic(() => import(/* webpackChunkName: "services" */ '../components/services'));
-const Experince = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/experince'));
-const Education = dynamic(() => import(/* webpackChunkName: "education" */ '../components/education'));
-const Quotes = dynamic(() => import(/* webpackChunkName: "quotes" */ '../components/quotes'));
+import Hero from '../components/index/hero';
+const About = dynamic(() => import(/* webpackChunkName: "about" */ '../components/index/about'));
+const Services = dynamic(() => import(/* webpackChunkName: "services" */ '../components/index/services'));
+const Experince = dynamic(() => import(/* webpackChunkName: "experince" */ '../components/index/experince'));
+const Education = dynamic(() => import(/* webpackChunkName: "education" */ '../components/index/education'));
+const Quotes = dynamic(() => import(/* webpackChunkName: "quotes" */ '../components/index/quotes'));
 
  
  

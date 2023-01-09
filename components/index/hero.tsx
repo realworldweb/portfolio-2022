@@ -2,10 +2,10 @@
 import Image from 'next/image';
 
 /*styles*/
-import Styles from '../styles/modules/hero.module.css';
+import Styles from '../../styles/modules/hero.module.css';
 
 /*assests*/
-import heroImg from '../public/hero-wide.jpg';
+import heroImg from '../../public/hero-wide.jpg';
 
 function Hero() {
 	return (

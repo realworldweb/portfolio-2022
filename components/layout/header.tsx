@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 /*styles*/
-import Styles from '../styles/modules/header.module.css';
+import Styles from '../../styles/modules/header.module.css';
 
 function Header() {
 	const router = useRouter();

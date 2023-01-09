@@ -2,11 +2,11 @@
 import Image from 'next/image';
 
 /*assests*/
-import { SvgExperince } from './svgs';
-import ExperinceImage from '../public/experience.jpg';
+import { SvgExperince } from '../assets/svgs';
+import ExperinceImage from '../../public/experience.jpg';
 
 /*Styles*/
-import Styles from '../styles/modules/info.module.css';
+import Styles from '../../styles/modules/info.module.css';
 import Link from 'next/link';
 
 const Experince = () => {

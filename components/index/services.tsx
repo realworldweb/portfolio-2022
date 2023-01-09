@@ -1,5 +1,5 @@
-import Styles from '../styles/modules/services.module.css' 
-import { SvgFirebase, SvgHTML5, SvgNodejs, SvgReact } from './svgs'
+import Styles from '../../styles/modules/services.module.css' 
+import { SvgFirebase, SvgHTML5, SvgNodejs, SvgReact } from '../assets/svgs'
 
 function Services() {
   return (

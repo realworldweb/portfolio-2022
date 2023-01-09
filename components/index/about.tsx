@@ -1,6 +1,6 @@
 
 /*styles*/
-import Styles from '../styles/modules/about.module.css';
+import Styles from '../../styles/modules/about.module.css';
 
 
 function About() {

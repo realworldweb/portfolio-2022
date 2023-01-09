@@ -1,9 +1,9 @@
 
 /*assests*/
-import { SvgStar } from './svgs';
+import { SvgStar } from '../assets/svgs';
 
 /*styles*/
-import Styles from '../styles/modules/quotes.module.css'
+import Styles from '../../styles/modules/quotes.module.css'
 
 const Quotes = () => {
 	return (

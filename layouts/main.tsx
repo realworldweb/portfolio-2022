@@ -2,8 +2,8 @@
 import { FC, ReactNode } from "react";
 
 /*components*/
-import Contact from "../components/contact";
-import Header from "../components/header";
+import Contact from "../components/layout/contact";
+import Header from "../components/layout/header";
 
 /*styles*/
 import Styles from "../styles/layouts/main.module.css";

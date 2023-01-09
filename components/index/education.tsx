@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 /*assests*/
-import { SvgLearning } from './svgs';
-import EducationImage from '../public/education.jpg';
+import { SvgLearning } from '../assets/svgs';
+import EducationImage from '../../public/education.jpg';
 
 /*Styles*/
-import Styles from '../styles/modules/info.module.css';
+import Styles from '../../styles/modules/info.module.css';
 
 const Education = () => {
 	return (
