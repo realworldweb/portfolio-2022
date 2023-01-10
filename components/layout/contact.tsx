@@ -18,6 +18,7 @@ import {
 import Styles from '../../styles/modules/contact.module.css';
 import { SvgEnvelope, SvgGithub, SvgLinkedin, SvgPhone } from '../assets/svgs';
 import PulsingGrid from '../assets/animations/pulsing-grid';
+import { setDefaultResultOrder } from 'dns';
 
 const Contact = () => {
 	const [email, setEmail] = useState<string>('');
@@ -26,9 +27,23 @@ const Contact = () => {
 	const [subject, setSubject] = useState<string>('');
 	const [message, setMessage] = useState<string>('');
 	const [emailSent, setEmailSent] = useState<String>('init');
+	const [error, setError] = useState<String>('');
 
 	const handleContact = (e: formEvent) => {
 		e.preventDefault();
+
+		if (!name) {
+			setError('Sorry please enter a name');
+			return;
+		}
+		if (!email && !phone) {
+			setError('please enter a means of contact');
+			return
+		}
+		if (!message) {
+			setError('please enter a message');
+			return;
+		}
 
 		setEmailSent('working');
 
@@ -69,17 +84,26 @@ const Contact = () => {
 						className={`d-flex position-relative mx-auto  ${Styles.contactFormContainer}`}
 					>
 						<div className={`d-flex pt-2 flex-column ${Styles.contactForm}`}>
-						{emailSent === 'success' ? (
-							<>
-								<h3 className='d-flex mx-auto text-white'>Email sent successfully</h3>
-								<p className='d-flex mx-auto text-white'>your mail has been sent to paulrooney60@gmail.com</p>
-							</>
-						) : emailSent === 'working' ? (
-							<>
-								<h3 className='d-flex mx-auto text-white'>Sending your Email</h3>
-								<h5 className='d-flex flex-column align-items-center position-relative w-75 mx-auto text-white'>Please wait<PulsingGrid /></h5>
-							</>
-						) : (
+							{emailSent === 'success' ? (
+								<>
+									<h3 className='d-flex mx-auto text-white'>
+										Email sent successfully
+									</h3>
+									<p className='d-flex mx-auto text-white'>
+										your mail has been sent to paulrooney60@gmail.com
+									</p>
+								</>
+							) : emailSent === 'working' ? (
+								<>
+									<h3 className='d-flex mx-auto text-white'>
+										Sending your Email
+									</h3>
+									<h5 className='d-flex flex-column align-items-center position-relative w-75 mx-auto text-white'>
+										Please wait
+										<PulsingGrid />
+									</h5>
+								</>
+							) : (
 								<>
 									<div className='d-flex flex-column position-relative'>
 										<h1 className='color-white'>Say hello...</h1>
@@ -87,7 +111,7 @@ const Contact = () => {
 											Drop a message below to reach my inbox.
 										</p>
 									</div>
-	
+
 									<div id='contact-form'>
 										<form
 											action='#template-mo'
@@ -108,7 +132,9 @@ const Contact = () => {
 												<input
 													name='email'
 													type='email'
-													onChange={(e: changeEvent) => setEmail(e.target.value)}
+													onChange={(e: changeEvent) =>
+														setEmail(e.target.value)
+													}
 													className='form-control'
 													id='email'
 													placeholder='Your Email'
@@ -117,7 +143,9 @@ const Contact = () => {
 											<div>
 												<input
 													value={phone}
-													onChange={(e: changeEvent) => setPhone(e.target.value)}
+													onChange={(e: changeEvent) =>
+														setPhone(e.target.value)
+													}
 													name='phone'
 													type='text'
 													className='form-control'
@@ -150,6 +178,7 @@ const Contact = () => {
 													placeholder='Write your message...'
 												/>
 											</div>
+											{error ? <p className='bg-white text-center rounded-pill text-danger'>{error}</p> : null}
 											<div>
 												<input
 													name='submit'
@@ -162,7 +191,7 @@ const Contact = () => {
 										</form>
 									</div>
 								</>
-						)}
+							)}
 						</div>
 					</div>
 					<div className={`position-relative ${Styles.contactThumb}`}>
