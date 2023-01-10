@@ -17,6 +17,7 @@ import {
 /*styles*/
 import Styles from '../../styles/modules/contact.module.css';
 import { SvgEnvelope, SvgGithub, SvgLinkedin, SvgPhone } from '../assets/svgs';
+import PulsingGrid from '../assets/animations/pulsing-grid';
 
 const Contact = () => {
 	const [email, setEmail] = useState<string>('');
@@ -75,8 +76,8 @@ const Contact = () => {
 							</>
 						) : emailSent === 'working' ? (
 							<>
-								<h3 className='d-flex mx-auto text-white'>Please wait while we send your Email</h3>
-								<p className='d-flex mx-auto text-white'></p>
+								<h3 className='d-flex mx-auto text-white'>Sending your Email</h3>
+								<h5 className='d-flex flex-column align-items-center position-relative w-75 mx-auto text-white'>Please wait<PulsingGrid /></h5>
 							</>
 						) : (
 								<>
