@@ -7,6 +7,9 @@ import type { NextPageWithLayout } from './_app';
 import Head from 'next/head'
 import dynamic from 'next/dynamic';
 
+/*data*/
+import { getData } from '../lib/data/data';
+
 /*layout*/
 import Layout from '../layouts/main'
 
@@ -18,10 +21,28 @@ const Experince = dynamic(() => import(/* webpackChunkName: "experince" */ '../c
 const Education = dynamic(() => import(/* webpackChunkName: "education" */ '../components/index/education'));
 const Quotes = dynamic(() => import(/* webpackChunkName: "quotes" */ '../components/index/quotes'));
 
- 
+/*types*/
+import { experince } from '../lib/constants/data-types';
+
+export async function getStaticProps() {
+
+  //const projects = await getData('project');
+  //const certs = await getData('courses');
+  //const feedback = await getData('feedback');
+  const experince: Array<experince> = await getData('experince');
+
+  return {
+    props: {
+      experince,
+    },
+  };
+}
+interface MyProps{
+  experince: Array<experince>
+}
+const  Home: NextPageWithLayout<MyProps> = ({experince}) => {
  
 
-const  Home: NextPageWithLayout = () => {
   return (
   <>
       <Head>
@@ -32,7 +53,7 @@ const  Home: NextPageWithLayout = () => {
       <Hero/>
       <About/>
       <Services/>
-      <Experince/>
+      <Experince experince={experince}/>
       <Education/>
       <Quotes/>
       </main> 
