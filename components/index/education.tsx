@@ -1,3 +1,6 @@
+/*react*/
+import {FC} from 'react'
+
 /*next*/
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +12,14 @@ import EducationImage from '../../public/education.jpg';
 /*Styles*/
 import Styles from '../../styles/modules/info.module.css';
 
-const Education = () => {
+/*types*/
+import { education } from '../../lib/constants/data-types';
+
+interface myProps {
+	education: Array<education>;
+}
+
+const Education: FC<myProps> = ({education}) => {
 	return (
 		<section id='education' className={`parallax-section ${Styles.education}`}>
 			<div className='d-flex w-100 position-relative'>

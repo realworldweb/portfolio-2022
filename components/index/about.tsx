@@ -1,9 +1,15 @@
+/*react*/
+import {FC} from 'react';
 
 /*styles*/
 import Styles from '../../styles/modules/about.module.css';
+import { project } from '../../lib/constants/data-types';
 
+interface myProps {
+	projects: Array<project>;
+}
 
-function About() {
+const  About: FC<myProps> = ({projects}) => {
 	return (
 		<section
 			id='about'

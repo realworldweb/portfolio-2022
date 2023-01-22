@@ -22,26 +22,28 @@ const Education = dynamic(() => import(/* webpackChunkName: "education" */ '../c
 const Quotes = dynamic(() => import(/* webpackChunkName: "quotes" */ '../components/index/quotes'));
 
 /*types*/
-import { experince } from '../lib/constants/data-types';
+import { education, experince, project } from '../lib/constants/data-types';
 
 export async function getStaticProps() {
-
-  //const projects = await getData('project');
-  //const certs = await getData('courses');
-  //const feedback = await getData('feedback');
+  
   const experince: Array<experince> = await getData('experince');
+  const projects: Array<project> = await getData('projects');
+  const education: Array<project> = await getData('education');
 
   return {
     props: {
       experince,
+      projects,
+      education,
     },
   };
 }
 interface MyProps{
-  experince: Array<experince>
+  experince: Array<experince>;
+  projects: Array<project>;
+  education: Array<education>;
 }
-const  Home: NextPageWithLayout<MyProps> = ({experince}) => {
- 
+const  Home: NextPageWithLayout<MyProps> = ({experince, projects, education}) => {
 
   return (
   <>
@@ -51,10 +53,10 @@ const  Home: NextPageWithLayout<MyProps> = ({experince}) => {
         </Head>
       <main>
       <Hero/>
-      <About/>
+      <About projects={projects}/>
       <Services/>
       <Experince experince={experince}/>
-      <Education/>
+      <Education education={education}/>
       <Quotes/>
       </main> 
   </>
