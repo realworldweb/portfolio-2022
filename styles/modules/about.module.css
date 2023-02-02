@@ -23,5 +23,31 @@
   }
 }
 
+.projectImage{
+  min-width: 250px;
+  min-height: 200px;
+
+}
+
+.projectInfo{
+  @media($xl){
+    width: 48%;
+  }
+}
+
+.link{
+  color: $yellow;
+  font-weight: 900;
+
+  &:hover{
+      color: #f1e2d7;
+  }
+  span{
+      font-weight: inherit;
+      font-size: 1.6rem;
+      color: inherit;
+  }
+}
+
 
 
