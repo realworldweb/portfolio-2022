@@ -1,69 +1,63 @@
 /*react*/
-import {FC} from 'react';
+import { FC } from 'react';
+
+/*next*/
+import dynamic from 'next/dynamic';
 
 /*styles*/
 import Styles from '../../styles/modules/about.module.css';
 import { project } from '../../lib/constants/data-types';
 
+/*images*/
+
+
 interface myProps {
 	projects: Array<project>;
 }
 
-const  About: FC<myProps> = ({projects}) => {
+const About: FC<myProps> = ({ projects }) => {
+	const latestProjects = projects
+		.reverse()
+		.filter((project, index) => index < 4 && project);
+  
+   
 	return (
 		<section
 			id='about'
 			className={`parallax-section ${Styles.section} ${Styles.about}`}
 		>
 			<div className='d-flex w-100 position-relative'>
-				<div className='row'>
-					<section className='col-md-6 col-sm-12'>
-						<article className={Styles.aboutThumb}>
-							<div className='section-title'>
-								<h1>About me</h1>
-								<p className='color-yellow'>
-									Young career driven professional.
-								</p>
-							</div>
-							<div>
-								<p>
-									I am a professional developer based in Warrenpoint, co.Down
-									northern Ireland. As well as an education and background in
-									tech I am also a gradute of business and enjoy working with
-									seo, branding and marketing strategy across various media
-									platforms.
-								</p>
-								<p>
-									In my spare time I like to keep active in the local tech
-									community and regularly attend our local tech meetup{' '}
-									<a  href='https://www.newrydigital.com' rel='noreferrer' target='_blank' className="d-inline position-relative link-primary">
-										Newry digital
-									</a>. I have a vivid imagination and a thirst for all things fanatsy and sci-fiction.
-								</p>
-							</div>
-						</article>
-					</section>
+				<section className={`bg-dark col-12 ${Styles.projectThumb}`}>
+					<article className={Styles.skillThumb}>
+						<div className=' section-title color-white'>
+							<h1>Projects</h1>
+							<p className='color-white'>Browse my latest projects.</p>
+						</div>
 
-					<section className={`bg-dark col-md-6 ${Styles.projectThumb}`}>
-						<article className={Styles.skillThumb}>
-							<div className=' section-title color-white'>
-								<h1>Projects</h1>
-								<p className='color-white'>
-									Browse my latest projects.
-								</p>
-							</div>
-
-							<div className={Styles.skillThumb}>
-
-								
-								
-							</div>
-						</article>
-					</section>
-				</div>
+						<div className={`d-flex color-white flex-wrap ${Styles.skillThumb}`}>
+							{latestProjects.map((project, index) => {
+								return (
+									<div className={`d-flex flex-column my-2 mx-auto ${Styles.project}`} key={index}>
+										<h5>{project.project}</h5>
+										<p>{project.description}</p>
+										<div>
+										{project.tech.map((tech, index) => {
+											return (
+                                                <span className={`mx-1 mt-2 p-2 badge bg-secondary`} key={index}>
+                                                    {tech}
+                                                </span>
+                                            );
+										})}
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</article>
+				</section>
 			</div>
 		</section>
 	);
-}
+};
 
 export default About;
