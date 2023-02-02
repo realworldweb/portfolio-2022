@@ -36,6 +36,9 @@ function Hero() {
 									I am a frontend focused fullstack developer based in northern Ireland with a number of years experince working with HTML, CSS and Javascript.
                                              Most recently I have been using react with next.js to build fast immersive frontend experinces which can run in serverless enviorments like Netlify.
 								</p>
+								<p className='d-block'>
+								In my spare time I like to keep active in the local tech community and regularly attend our local tech meetup Newry digital. I have a vivid imagination and a thirst for all things fanatsy and sci-fiction.
+								</p>
 
 								<a
 									href='#about'
