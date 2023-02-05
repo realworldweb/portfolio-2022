@@ -1,6 +1,6 @@
 module.exports = {
     /*general-colors*/
-    blue:    '#0d6efd',
+    blue:    '#3C6997',
     indigo:  '#6610f2',
     purple:  '#6f42c1',
     pink:    '#d63384',
@@ -11,6 +11,7 @@ module.exports = {
     teal:    '#20c997',
     cyan:    '#0dcaf0',
     cream:    '#f1e2d7',
+    
     
     /* light-theme */
     lightBackground: '#F3F3F3',

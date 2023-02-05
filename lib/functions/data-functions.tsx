@@ -1,7 +1,14 @@
 import { education, experince, project } from '../constants/data-types';
 
 const filterByTech = (data: Array<education | experince | project >, tech: string) => {
-  return data.filter(item => item.tech.includes(tech));
+  return data.filter(item => {
+    for(const value of item.tech) {
+      if(value.toLowerCase() === tech.toLowerCase()) {
+        return true;
+      }
+    }
+  
+  });
 }
 
 const paginate  = (data: Array<education | experince | project >, perPage: number = 10) => {
@@ -30,7 +37,24 @@ const paginate  = (data: Array<education | experince | project >, perPage: numbe
  return pages;
 }
 
+const filters = (data: Array<education | experince | project > ) =>{
+
+  const tech: Array<string> = [];
+
+  for(const item of data){
+    item.tech.reduce((acc: Array<string>, val: string) => { 
+      if(!tech.includes(val)){
+        tech.push(val);
+      }
+      return acc;
+    },[])
+  }
+
+  return tech;
+}
+
 export {
     filterByTech,
     paginate,
+    filters
 }

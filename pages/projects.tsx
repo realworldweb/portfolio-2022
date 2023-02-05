@@ -10,15 +10,21 @@ import Image from 'next/image';
 import { getData } from '../lib/data/data';
 
 /*function*/
-import { filterByTech, paginate } from '../lib/functions/data-functions';
-
+import { filterByTech, paginate, filters } from '../lib/functions/data-functions';
 
 /*layout*/
 import Layout from '../layouts/main';
 
+/*styles*/
+import Styles from '../styles/modules/content.module.css';
+
+
 /*types*/
 import { project } from '../lib/constants/data-types';
+
+/*components*/
 import Pagination from '../components/content-pages/pagination';
+import ContentControls from '../components/content-pages/content-controls';
 
 export async function getStaticProps() {
 	const projects: Array<project> = await getData('projects');
@@ -34,20 +40,21 @@ interface MyProps {
 }
 
 const Home: NextPageWithLayout<MyProps> = ({ projects }) => {
+
   const [data, setData] = useState<Array<project>>(projects);
   const pages: Array<Array<project>> = paginate(data) as Array<Array<project>>;
   const [page, setPage] = useState<number>(1);
   const current = pages[page -1];
 
-  console.log(current);
-
-  
-  
 
   const changePage = (pageNumber: number) => {
    setPage((prevPage) => prevPage === pageNumber ? prevPage : pageNumber);
   };
 
+  const filterData = (tech: string) => {
+    setData(filterByTech(projects, tech) as Array<project>);
+  };
+  
 	return (
 		<>
 			<Head>
@@ -55,6 +62,11 @@ const Home: NextPageWithLayout<MyProps> = ({ projects }) => {
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
 			</Head>
 			<main>
+        <div className={`d-flex`}>
+          <div className={`d-inline m-2 p-1 align-self-center ${Styles.controls}`}>
+          <ContentControls filter={filterData} tech={filters(projects)} />
+          </div>
+          <div>
           {current.map((project: project, index: number) => {
             return (
             <article
@@ -95,6 +107,8 @@ const Home: NextPageWithLayout<MyProps> = ({ projects }) => {
             </article>
             );
           })}
+          </div>
+          </div>
           <Pagination changePage={changePage} count={pages.length}/>
 			</main>
 		</>
