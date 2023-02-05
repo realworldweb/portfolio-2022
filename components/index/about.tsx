@@ -27,7 +27,7 @@ const About: FC<myProps> = ({ projects }) => {
 		>
 			<div className='d-flex w-100 position-relative'>
 				<section className={`bg-dark col-12 ${Styles.projectThumb}`}>
-					<article className={Styles.skillThumb}>
+					<div className={Styles.skillThumb}>
 						<div className=' section-title color-white'>
 							<h1>Projects</h1>
 							<p className='color-white'>Browse my latest projects.</p>
@@ -38,7 +38,7 @@ const About: FC<myProps> = ({ projects }) => {
 						>
 							{latestProjects.map((project, index) => {
 								return (
-									<div
+									<article
 										className={`d-flex flex-wrap my-2 mx-auto ${Styles.project}`}
 										key={index}
 									>
@@ -73,7 +73,7 @@ const About: FC<myProps> = ({ projects }) => {
 												})}
 											</div>
 										</div>
-									</div>
+									</article>
 								);
 							})}
 						</div>
@@ -89,7 +89,7 @@ const About: FC<myProps> = ({ projects }) => {
 									</h4>
 								</Link>
 							</div>
-					</article>
+					</div>
 				</section>
 			</div>
 		</section>
