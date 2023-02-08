@@ -108,10 +108,10 @@ function Header() {
 					</li>
 					<li
 						className={`${Styles.standardLink} ${
-							asPath === '/learning' ? Styles.activeLink : ''
+							asPath === '/education' ? Styles.activeLink : ''
 						}`}
 					>
-						<Link href='/learning'>Learning</Link>
+						<Link href='/education'>Learning</Link>
 					</li>
 					<li
 						className={`${Styles.standardLink} ${

@@ -24,6 +24,7 @@ const Quotes = dynamic(() => import(/* webpackChunkName: "quotes" */ '../compone
 /*types*/
 import { education, experince, project } from '../lib/constants/data-types';
 
+//TODO: check loading between site page and home seems slow
 export async function getStaticProps() {
   
   const experince: Array<experince> = await getData('experince');

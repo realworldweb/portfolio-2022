@@ -9,6 +9,10 @@ import Image from 'next/image';
 /*data*/
 import { getData } from '../lib/data/data';
 
+/*components*/
+import Pagination from '../components/content-pages/pagination';
+import ContentControls from '../components/content-pages/content-controls';
+
 /*function*/
 import { filterByTech, paginate, filters } from '../lib/functions/data-functions';
 
@@ -21,10 +25,6 @@ import Styles from '../styles/modules/content.module.css';
 
 /*types*/
 import { project } from '../lib/constants/data-types';
-
-/*components*/
-import Pagination from '../components/content-pages/pagination';
-import ContentControls from '../components/content-pages/content-controls';
 
 export async function getStaticProps() {
 	const projects: Array<project> = await getData('projects');

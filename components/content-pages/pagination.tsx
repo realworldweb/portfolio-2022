@@ -27,23 +27,23 @@ const Pagination: FC<myProps>  = ({changePage, count}) => {
     
 
   return (
-    <div className='d-flex w-100 align-items-center justify-content-center mb-2' style={{gap: "7px"}}>
-        {pageNumber.pageNumber > 10 ? <button onClick={JUMPTOSTART}><DoubleCaretBack width={1} height={1} /></button> : null}
-        {pageNumber.pageNumber > 1 ? <button onClick={DECREMENT}><CaretBack width={1} height={1} /></button> : null}
-        <p className='m-0 p-0'>page</p>
+    <div className='d-flex w-100  color-blue align-items-center justify-content-center mb-2' style={{gap: "7px"}}>
+        {pageNumber.pageNumber > 10 ? <button className={`btn btn-link color-blue`} onClick={JUMPTOSTART}><DoubleCaretBack width={"2rem"} height={"2rem"} /></button> : null}
+        {pageNumber.pageNumber > 1 ? <button  className={`btn btn-link color-blue`} onClick={DECREMENT}><CaretBack width={"2rem"} height={"2rem"}/></button> : null}
+        <p className='m-0 text-dark p-0'>page</p>
         {Array.from({length: count}).map((val, index) => {
             return (
-                <span
-                className={`${index + 1 === pageNumber.pageNumber ? "text-primary" : "text-dark" }`}
+                <button
+                className={`btn btn-link p-0 m-0 ${index + 1 === pageNumber.pageNumber ? "color-blue text-decoration-underline fw-bold" : "text-dark text-decoration-none" }`}
                     key={index}
                     onClick={() => JUMPTO(index + 1)}
                 >
                     {index + 1}
-                </span>
+                </button>
             )
         } )}
-        {count > 1 ? <button onClick={INCREMENT}><CaretForward width={1} height={1}/></button> : null}
-        {count > 10 ? <button onClick={JUMPTOEND}><CaretDoubleForward width={1} height={1} /></button> : null}
+        {count > 1 && pageNumber.pageNumber < count ? <button  className={`btn btn-link color-blue`} onClick={INCREMENT}><CaretForward width={"2rem"} height={"2rem"}/></button> : null}
+        {count > 10 ? <button className={`btn btn-link color-blue`} onClick={JUMPTOEND}><CaretDoubleForward width={"2rem"} height={"2rem"} /></button> : null}
     </div>
   )
 }
