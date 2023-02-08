@@ -22,7 +22,7 @@ function Services() {
                     </div>
                </div>
 
-               <div className="bg-dark col-lg-3 col-md-6">
+               <div className={`col-lg-3 col-md-6 bg-blue`}>
                     <div className={`color-white d-flex flex-column align-items-center ${Styles.serviceThumb}`}>
                          <SvgFirebase width="5rem" height="5rem" />
                               <h4>Firebase & MongoDB</h4>

@@ -9,20 +9,20 @@ interface myProps{
 const ContentControls: FC<myProps>  = ({filter, tech}) => {
 
   return (
-    <div>
+    <div className='d-flex'>
     <h4 className='text-dark p-2 fw-bold'>Filter by tech</h4>
-    <div>
+      <select name="tech" id="tech" onChange={(e) => {e.preventDefault(); filter(e.target.value)}}>
         {tech.map( (val, index) => {
-            return  <span
+            return  <option
             className={`mx-1 mt-2 p-2 badge bg-secondary`}
             key={index}
-            onClick={() => filter(val)}
+            value={val}
           >
             {val}
-          </span>
+          </option>
         })
     }
-    </div>
+    </select>
     </div>
   )
 }

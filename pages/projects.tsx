@@ -62,19 +62,20 @@ const Home: NextPageWithLayout<MyProps> = ({ projects }) => {
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
 			</Head>
 			<main>
-        <div className={`d-flex`}>
-          <div className={`d-inline m-2 p-1 align-self-center ${Styles.controls}`}>
+        <div className={`d-flex flex-column`}>
+          <div className={`d-inline m-2 p-1 align-self-start`}>
           <ContentControls filter={filterData} tech={filters(projects)} />
           </div>
-          <div>
+          <div className={`d-flex mb-3 flex-wrap`}>
           {current.map((project: project, index: number) => {
             return (
             <article
-              className={`d-flex flex-wrap my-2 mx-auto`}
+              className={`d-flex align-items-center position-relative flex-column flex-lg-row my-2 p-2 py-3 mx-auto ${Styles.project}`}
+
               key={index}
             >
               <div
-                className={`d-inline mx-auto mb-2 position-relative`}
+                className={`d-flex mx-auto mx-lg-0 mb-2 position-relative ${Styles.projectImage}`}
               >
                 <Image
                   src={`/${project.project
@@ -87,10 +88,10 @@ const Home: NextPageWithLayout<MyProps> = ({ projects }) => {
                 />
               </div>
               <div
-                className={`d-flex flex-column align-items-center`}
+                className={`d-flex mx-auto fw-bold flex-column align-items-center ${Styles.projectInfo}`}
               >
-                <h5 className='text-white'>{project.project}</h5>
-                <p>{project.description}</p>
+                <h5 className='color-blue fw-bolder'>{project.project}</h5>
+                <p className='text-center color-blue'>{project.description}</p>
                 <div>
                   {project.tech.map((tech, index) => {
                     return (

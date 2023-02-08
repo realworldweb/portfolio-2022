@@ -1,5 +1,36 @@
-.controls{
+.project{
  background-color: $yellow;
- width: 22%;
+ width: 89%;
  border-radius: 5px;
+ box-shadow: 0 4px 6px hexToRgba(#cf9a43,0.8);
+
+ @media($md){
+    width: 45%;
+ }
+}
+
+.projectImage{
+  width: 75%;
+  min-height: 125px;
+
+  @media($lg){
+    width: 35%;
+  }
+}
+
+.projectInfo{
+width: 85%;
+
+ h5{
+    font-size: 1.7rem;
+    font-weight: 900;
+ }
+
+ p{
+    font-weight: 700;
+    color: #333;
+ }
+@media($lg){
+  width: 60%;
+ }
 }

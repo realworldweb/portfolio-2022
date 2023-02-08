@@ -26,18 +26,8 @@ function Header() {
 		}
 	};
 
-	useEffect(() => {
-		if(!window)return;
-
-		window.addEventListener('scroll', () => setScroll(window.scrollY));
-		
-
-        return () => {
-			window.removeEventListener('scroll', () => setScroll(window.scrollY));
-	} })
-
 	return (
-		<div className={`navbar w-100 ${Styles.customNavbar} ${scroll > 0 ? Styles.customNavbarScrolled: ""}`} ref={navToggle}>
+		<div className={`navbar w-100 bg-light ${Styles.customNavbar}`} ref={navToggle}>
 			<div
 				className={`justify-content-start ${Styles.container}`}
 			>

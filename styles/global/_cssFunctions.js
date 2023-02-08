@@ -36,9 +36,7 @@ function hexToRgba (hex, aplha = 1) {
     return `rgba(${r},${g},${b},${aplha})`;
 }
 
-
-
 module.exports = {
     circumference,
-    hexToRgba 
+    hexToRgba,
 }
