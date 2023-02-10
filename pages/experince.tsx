@@ -69,34 +69,37 @@ const  Home: NextPageWithLayout<MyProps> = ({ roles }) => {
           <ContentControls filter={filterData} tech={filters(roles)} />
           </div>
           <div className={`d-flex mb-3 flex-wrap`}>
-          {current.map((role: experince, index: number) => {
-            return (
-            <article
-              className={`d-flex align-items-center position-relative flex-column flex-lg-row my-2 p-2 py-3 mx-auto ${Styles.project}`}
-
-              key={index}
-            >
-              <div
-                className={`d-flex mx-auto fw-bold flex-column align-items-center ${Styles.roleInfo}`}
+          {current ?
+          <>
+            {current.map((role: experince, index: number) => {
+              return (
+              <article
+                className={`d-flex align-items-center position-relative flex-column flex-lg-row my-2 p-2 py-3 mx-auto ${Styles.project}`}
+  
+                key={index}
               >
-                <h5 className='color-blue fw-bolder'>{role.employer}</h5>
-                <p className='text-center color-blue'>{role.description}</p>
-                <div>
-                  {role.tech.map((tech, index) => {
-                    return (
-                      <span
-                        className={`mx-1 mt-2 p-2 badge bg-secondary`}
-                        key={index}
-                      >
-                        {tech}
-                      </span>
-                    );
-                  })}
+                <div
+                  className={`d-flex mx-auto fw-bold flex-column align-items-center ${Styles.roleInfo}`}
+                >
+                  <h5 className='color-blue fw-bolder'>{role.employer}</h5>
+                  <p className='text-center color-blue'>{role.description}</p>
+                  <div>
+                    {role.tech.map((tech, index) => {
+                      return (
+                        <span
+                          className={`mx-1 mt-2 p-2 badge bg-secondary`}
+                          key={index}
+                        >
+                          {tech}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            </article>
-            );
-          })}
+              </article>
+              );
+            })}
+          </> : null };
           </div>
           </div>
           <Pagination changePage={changePage} count={pages.length}/>
