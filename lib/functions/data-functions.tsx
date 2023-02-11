@@ -17,14 +17,14 @@ const paginate  = (data: Array<education | experince | project >, perPage: numbe
   
  const pages: Array<Array<education | experince | project >> = [];
   
-   data.reduce((acc: Array<education | experince | project >, val: education | experince | project, index: number) => {
+   const stack = data.reduce((acc: Array<education | experince | project >, val: education | experince | project, index: number) => {
     
     if(acc.length <= perPage -1){ //keep adding items to acc till qouta reached
       acc.push(val);
 
       if(index === data.length -1){ // catch last page with less items
         pages.push(acc);
-        return acc;
+        return [];
       }
     }
     else{
@@ -34,7 +34,7 @@ const paginate  = (data: Array<education | experince | project >, perPage: numbe
     return acc;
    },[])
 
- return pages;
+ return stack.length === 0 ? pages : [...pages, stack];
 }
 
 const filters = (data: Array<education | experince | project > ) =>{

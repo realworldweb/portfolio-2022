@@ -46,7 +46,8 @@ const  Home: NextPageWithLayout<MyProps> = ({ courses }) => {
   const pages: Array<Array<education>> = paginate(data, 12) as Array<Array<education>>;
   const [page, setPage] = useState<number>(1);
   const current = pages[page -1];
-
+  
+  console.log(typeof current);
 
   const changePage = (pageNumber: number) => {
    setPage((prevPage) => prevPage === pageNumber ? prevPage : pageNumber);
