@@ -43,7 +43,7 @@ interface MyProps{
 const  Home: NextPageWithLayout<MyProps> = ({ courses }) => {
 
   const [data, setData] = useState<Array<education>>(courses);
-  const pages: Array<Array<education>> = paginate(data) as Array<Array<education>>;
+  const pages: Array<Array<education>> = paginate(data, 12) as Array<Array<education>>;
   const [page, setPage] = useState<number>(1);
   const current = pages[page -1];
 
@@ -74,11 +74,11 @@ const  Home: NextPageWithLayout<MyProps> = ({ courses }) => {
             {current.map((course: education, index: number) => {
               return (
               <article
-                className={`d-flex align-items-center position-relative flex-column flex-lg-row my-2 p-2 py-3 mx-auto ${Styles.project}`}
+                className={`d-flex align-items-center position-relative flex-column flex-lg-row my-2 p-2 py-3 mx-auto ${Styles.course}`}
                 key={index}
               >
                 <div
-                  className={`d-flex mx-auto fw-bold flex-column align-items-center ${Styles.projectInfo}`}
+                  className={`d-flex mx-auto fw-bold flex-column align-items-center ${Styles.courseInfo}`}
                 >
                   <h5 className='color-blue fw-bolder'>{course.title}</h5>
                   <p className='text-center color-blue'>{course.description}</p>

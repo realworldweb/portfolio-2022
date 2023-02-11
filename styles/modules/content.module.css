@@ -1,36 +1,53 @@
-.project{
+.project, .course{
  background-color: $yellow;
  width: 89%;
  border-radius: 5px;
  box-shadow: 0 4px 6px hexToRgba(#cf9a43,0.8);
+ max-width: 500px;
 
  @media($md){
     width: 45%;
+    max-width: 650px;
  }
+}
+
+.course{
+   @media($md){
+      width: 35%;
+      max-width: 450px;
+   }
 }
 
 .projectImage{
   width: 75%;
+  max-width: 300px;
   min-height: 125px;
 
   @media($lg){
-    width: 35%;
+    width: 26%;
   }
 }
 
-.projectInfo{
+.projectInfo, .courseInfo{
 width: 85%;
 
  h5{
-    font-size: 1.7rem;
+    font-size: 1.48rem;
     font-weight: 900;
+
+    @media($xl){
+      font-size: 1.6rem;
  }
+}
 
  p{
     font-weight: 700;
     color: #333;
  }
-@media($lg){
-  width: 60%;
- }
+}
+
+.projectInfo{
+   @media($lg){
+      width: 60%;
+     }
 }
