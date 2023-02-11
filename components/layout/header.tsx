@@ -1,5 +1,5 @@
 /*react*/
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 
 /*next*/
 import Link from 'next/link';
@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 
 /*styles*/
 import Styles from '../../styles/modules/header.module.css';
+
+/*assets*/
+import { FileDownload } from '../assets/svgs';
 
 function Header() {
 	const router = useRouter();
@@ -29,11 +32,11 @@ function Header() {
 	return (
 		<div className={`navbar w-100 bg-light ${Styles.customNavbar}`} ref={navToggle}>
 			<div
-				className={`justify-content-start ${Styles.container}`}
+				className={`justify-content-start mx-auto ${Styles.container}`}
 			>
 				<div className='d-flex position-relative w-100 justify-content-between'>
 					<button
-						className={`d-inline-block d-md-none position-absolute ${Styles.navbarToggle}`}
+						className={`d-inline-block d-lg-none position-absolute ${Styles.navbarToggle}`}
 						onClick={toggleNavbar}
 					>
 						<svg
@@ -86,48 +89,54 @@ function Header() {
 						<span />
 						<div className={Styles.splash} />
 					</button>
-					<a href='#' className={`d-inline-flex position-relative ml-2 mt-3 mt-md-0 ${Styles.customBrand} ${scroll > 0 ? Styles.customBrandSmall: ""}`}>
+					<a href='#' className={`d-inline-flex position-relative ml-2 ${Styles.customBrand} ${scroll > 0 ? Styles.customBrandSmall: ""}`}>
 						RealworldWeb
 					</a>
 				</div>
 
-				<ul className={`nav ${Styles.menu}`}>
-					<li
+				<nav className={`nav flex-nowrap ${Styles.menu}`}>
+					<span
 						className={`${Styles.standardLink} ${
 							asPath === '/' ? Styles.activeLink : ''
 						}`}
 					>
 						<Link href='/'>Home</Link>
-					</li>
-					<li
+					</span>
+					<span
 						className={`${Styles.standardLink} ${
 							asPath === '/projects' ? Styles.activeLink : ''
 						}`}
 					>
 						<Link href='/projects'>Projects</Link>
-					</li>
-					<li
+					</span>
+					<span
 						className={`${Styles.standardLink} ${
 							asPath === '/education' ? Styles.activeLink : ''
 						}`}
 					>
 						<Link href='/education'>Learning</Link>
-					</li>
-					<li
+					</span>
+					<span
 						className={`${Styles.standardLink} ${
 							asPath === '/experince' ? Styles.activeLink : ''
 						}`}
 					>
 						<Link href='/experince'>Experince</Link>
-					</li>
-					<li
+					</span>
+					<span
 						className={`${Styles.standardLink} ${
 							asPath === '/contact' ? Styles.activeLink : ''
 						}`}
 					>
 						<a href='#contact'>Contact</a>
-					</li>
-				</ul>
+					</span>
+					<span
+						className={`${Styles.standardLink}`} 
+
+					>
+						<a className='d-flex w-100 align-items-center justify-content-center' href='/cv.docx' download><FileDownload width={"1.7rem"} height={"1.7rem"}/>Download CV</a>
+					</span>
+				</nav>
 			</div>
 		</div>
 	);

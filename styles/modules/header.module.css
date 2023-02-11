@@ -1,9 +1,10 @@
 .customNavbar {
 	margin-bottom: 0;
 	background-color: $blue !important;
+	min-height: 65px;
 
 
-	@media ($md) {
+	@media ($lg) {
 		padding: 12px 0;
 		border-bottom: 0;
 		background: 0 0;
@@ -20,7 +21,7 @@
 
 .customNavbarScrolled .standardLink {
 
-	@media ($md) {
+	@media ($lg) {
 	  a{
 		color: $yellow;
 	  }
@@ -32,17 +33,13 @@
 
 
 .container {
-	width: 100vw;
+	width: 95vw;
 	position: relative;
 
-	@media ($md) {
+	@media ($lg) {
 		align-items: center;
 		gap: 5px;
 		display: flex;
-	}
-
-	@media ($lg) {
-		width: 90vw;
 	}
 }
 
@@ -51,10 +48,14 @@
 	left: 5%;
 	text-shadow: 2px 2px #333;
 	font-weight: 900;
-	font-size: clamp(1.5rem, 3.5vw, 1.8rem);
+	font-size: clamp(1.5rem, 3.5vw, 1.65rem);
 	line-height: 35px;
 	letter-spacing: 3px;
 	z-index: 10;
+
+	@media ($lg) {
+		left: 0;
+	}
 }
 
 .customBrandSmall {
@@ -74,13 +75,14 @@
 	z-index: -9999;
 
 
-	@media ($md) {
+	@media ($lg) {
 		display: inline-flex;
 		flex-direction: row;
 		height: fit-content;
 		align-items: center;
+		justify-content: end;
 		position: relative;
-		min-width: 600px;
+		min-width: 700px;
 		z-index: 9999;
 		visibility: visible;
 	}
@@ -99,9 +101,9 @@
 		text-decoration: none;
 		padding: 1rem;
 
-		@media ($md) {
+		@media ($lg) {
 			color: $yellow;
-			font-size: clamp(0.7rem, 1.6vw, 1rem);
+			font-size: clamp(0.7rem, 1.6vw, 0.93rem);
 			padding: 0.5rem;
 			letter-spacing: 2px;
 		}
@@ -112,7 +114,7 @@
 			color: $orange;
 		}
 	}
-	@media ($md) {
+	@media ($lg) {
 		opacity: 1;
 	}
 }
@@ -131,7 +133,7 @@
 	background: transparent;
 	outline: 0;
 	right: 15px;
-	top: 7px;
+	top: -6px;
 	cursor: pointer;
 	border-radius: 50%;
 	transition: background-color 0.15s linear;
@@ -139,6 +141,10 @@
 	&:hover,
 	&:focus {
 		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	@media ($md) {
+		top: -6px;
 	}
 }
 
