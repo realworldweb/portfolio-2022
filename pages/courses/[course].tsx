@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 
     
-	const course: Array<education> = await getData('experince', {course: courseName.replaceAll("-", " ")});
+	const course: Array<education> = await getData('experince', {title: courseName.replaceAll("-", " ")});
 
 
    
@@ -73,7 +73,6 @@ const Course: NextPageWithLayout<MyProps> = ({ course }) => {
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
 			</Head>
 			<main>
-        
 			</main>
 		</>
 	);

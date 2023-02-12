@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 
     
-	const role: Array<experince> = await getData('experince', {role: roleName.replaceAll("-", " ")});
+	const role: Array<experince> = await getData('experince', {employer: roleName.replaceAll("-", " ")});
 
 
    
