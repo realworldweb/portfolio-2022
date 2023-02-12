@@ -35,12 +35,11 @@ export const getStaticPaths: GetStaticPaths = async() => {
     const roles: Array<experince> = await getData('experince');
   
     // Get the paths we want to pre-render based on posts
-    const paths = roles.map((role) => ({
+    const paths = roles.map((data) => ({
       
-      params: { roleName: role.employer.replaceAll(" ", "-") },
-
+      params: { roleName: data.employer.replaceAll(" ", "-") },
     }))
-  
+    console.log(paths);
     // We'll pre-render only these paths at build time.
     // { fallback: false } means other routes should 404.
     return { paths, fallback: false }
