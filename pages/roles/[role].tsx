@@ -32,7 +32,7 @@ interface IParams extends ParsedUrlQuery {
 
 export const getStaticPaths: GetStaticPaths = async() => {
     // Call an external API endpoint to get posts
-    const roles: Array<experince> = await getData('education');
+    const roles: Array<experince> = await getData('experince');
   
     // Get the paths we want to pre-render based on posts
     const paths = roles.map((role) => ({
