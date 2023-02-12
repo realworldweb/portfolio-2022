@@ -4,27 +4,27 @@ import type { ReactElement } from 'react';
 import { useState } from 'react';
 
 /*next*/
-import type { NextPageWithLayout } from './_app';
+import type { NextPageWithLayout } from '../_app';
 import Head from 'next/head'
 
 /*data*/
-import { getData } from '../lib/data/data';
+import { getData } from '../../lib/data/data';
 
 /*components*/
-import Pagination from '../components/content-pages/pagination';
-import ContentControls from '../components/content-pages/content-controls';
+import Pagination from '../../components/content-pages/pagination';
+import ContentControls from '../../components/content-pages/content-controls';
 
 /*function*/
-import { filterByTech, paginate, filters } from '../lib/functions/data-functions';
+import { filterByTech, paginate, filters } from '../../lib/functions/data-functions';
 
 /*layout*/
-import Layout from '../layouts/main';
+import Layout from '../../layouts/main';
 
 /*styles*/
-import Styles from '../styles/modules/content.module.css';
+import Styles from '../../styles/modules/content.module.css';
 
 /*types*/
-import { education } from '../lib/constants/data-types';
+import { education } from '../../lib/constants/data-types';
 
 export async function getStaticProps() {
   
@@ -40,14 +40,12 @@ export async function getStaticProps() {
 interface MyProps{
   courses: Array<education>;
 }
-const  Home: NextPageWithLayout<MyProps> = ({ courses }) => {
+const  Courses: NextPageWithLayout<MyProps> = ({ courses }) => {
 
   const [data, setData] = useState<Array<education>>(courses);
   const pages: Array<Array<education>> = paginate(data, 12) as Array<Array<education>>;
   const [page, setPage] = useState<number>(1);
   const current = pages[page -1];
-  
-  console.log(typeof current);
 
   const changePage = (pageNumber: number) => {
    setPage((prevPage) => prevPage === pageNumber ? prevPage : pageNumber);
@@ -110,8 +108,8 @@ const  Home: NextPageWithLayout<MyProps> = ({ courses }) => {
   )
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Courses.getLayout = function getLayout(page: ReactElement) {
 	return <Layout>{page}</Layout>;
 };
 
-export default Home;
+export default Courses;

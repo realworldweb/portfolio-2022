@@ -38,7 +38,7 @@ const About: FC<myProps> = ({ projects }) => {
 						>
 							{latestProjects.map((project, index) => {
 								return (
-									<article
+									<Link href={`/projects/${project.project.replaceAll(" ","-")}`}
 										className={`d-flex flex-wrap my-2 mx-auto ${Styles.project}`}
 										key={index}
 									>
@@ -73,7 +73,7 @@ const About: FC<myProps> = ({ projects }) => {
 												})}
 											</div>
 										</div>
-									</article>
+									</Link>
 								);
 							})}
 						</div>

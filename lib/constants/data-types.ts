@@ -15,6 +15,11 @@ interface project {
     github: string;
 }
 
+interface fields {
+    [key : string]: string
+}
+
+
 interface education {
     title: string;
     description: string;
@@ -28,4 +33,5 @@ export type {
     experince,
     project,
     education,
+    fields
 };

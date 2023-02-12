@@ -4,27 +4,27 @@ import type { ReactElement} from 'react';
 import { useState } from 'react';
 
 /*next*/
-import type { NextPageWithLayout } from './_app';
+import type { NextPageWithLayout } from '../_app';
 import Head from 'next/head'
 
 /*data*/
-import { getData } from '../lib/data/data';
+import { getData } from '../../lib/data/data';
 
 /*components*/
-import Pagination from '../components/content-pages/pagination';
-import ContentControls from '../components/content-pages/content-controls';
+import Pagination from '../../components/content-pages/pagination';
+import ContentControls from '../../components/content-pages/content-controls';
 
 /*layout*/
-import Layout from '../layouts/main'
+import Layout from '../../layouts/main'
 
 /*styles*/
 import Styles from '../styles/modules/content.module.css';
 
 /*types*/
-import { experince } from '../lib/constants/data-types';
+import { experince } from '../../lib/constants/data-types';
 
 /*functions*/
-import { filterByTech, paginate, filters } from '../lib/functions/data-functions';
+import { filterByTech, paginate, filters } from '../../lib/functions/data-functions';
 
 
 
@@ -42,7 +42,7 @@ export async function getStaticProps() {
 interface MyProps{
   roles: Array<experince>;
 }
-const  Home: NextPageWithLayout<MyProps> = ({ roles }) => {
+const  Experince: NextPageWithLayout<MyProps> = ({ roles }) => {
 
   const [data, setData] = useState<Array<experince>>(roles);
   const pages: Array<Array<experince>> = paginate(data) as Array<Array<experince>>;
@@ -108,8 +108,8 @@ const  Home: NextPageWithLayout<MyProps> = ({ roles }) => {
   )
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Experince.getLayout = function getLayout(page: ReactElement) {
 	return <Layout>{page}</Layout>;
 };
 
-export default Home;
+export default Experince;

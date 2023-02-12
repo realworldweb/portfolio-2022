@@ -80,7 +80,7 @@
 		flex-direction: row;
 		height: fit-content;
 		align-items: center;
-		justify-content: end;
+		justify-content: flex-end;
 		position: relative;
 		min-width: 700px;
 		z-index: 9999;

@@ -23,8 +23,8 @@
   max-width: 300px;
   min-height: 125px;
 
-  @media($lg){
-    width: 26%;
+  @media($xl){
+    width: 30%;
   }
 }
 
