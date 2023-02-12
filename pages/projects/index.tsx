@@ -74,6 +74,7 @@ const Projects: NextPageWithLayout<MyProps> = ({ projects }) => {
               return (
                 <article
                   className={`d-flex position-relative my-2 p-2 py-3 mx-auto ${Styles.project}`}
+                  key={index}
                 >
                   <Link className='d-flex align-items-center w-100 position-relative flex-column flex-xl-row' href={`/projects/${project.project.replaceAll(" ","-")}`} key={index}>
                   <div
