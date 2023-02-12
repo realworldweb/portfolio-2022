@@ -56,7 +56,7 @@ const Education: FC<myProps> = ({education}) => {
 								</div>)
 								})}
 							</div>
-								<Link href='/experince'>
+								<Link href='/courses'>
 									<h4
 										className={`d-flex w-100 position-relative justify-content-end p-4 p-sm-5 align-items-center ${Styles.link}`}
 									>

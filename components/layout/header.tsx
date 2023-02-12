@@ -89,9 +89,9 @@ function Header() {
 						<span />
 						<div className={Styles.splash} />
 					</button>
-					<a href='#' className={`d-inline-flex position-relative ml-2 ${Styles.customBrand} ${scroll > 0 ? Styles.customBrandSmall: ""}`}>
+					<Link href='/' className={`d-inline-flex position-relative ml-2 ${Styles.customBrand} ${scroll > 0 ? Styles.customBrandSmall: ""}`}>
 						RealworldWeb
-					</a>
+					</Link>
 				</div>
 
 				<nav className={`nav flex-nowrap ${Styles.menu}`}>
@@ -111,17 +111,17 @@ function Header() {
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
-							asPath === '/education' ? Styles.activeLink : ''
+							asPath === '/courses' ? Styles.activeLink : ''
 						}`}
 					>
-						<Link href='/education'>Learning</Link>
+						<Link href='/courses'>Learning</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
-							asPath === '/experince' ? Styles.activeLink : ''
+							asPath === '/roles' ? Styles.activeLink : ''
 						}`}
 					>
-						<Link href='/experince'>Experince</Link>
+						<Link href='/roles'>Experince</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${

@@ -18,7 +18,7 @@ import {
 import Styles from '../../styles/modules/contact.module.css';
 import { SvgEnvelope, SvgGithub, SvgLinkedin, SvgPhone } from '../assets/svgs';
 import PulsingGrid from '../assets/animations/pulsing-grid';
-import { setDefaultResultOrder } from 'dns';
+
 
 const Contact = () => {
 	const [email, setEmail] = useState<string>('');
@@ -243,8 +243,8 @@ const Contact = () => {
 						>
 							<Link href='/'>Home</Link>
 							<Link href='/projects'>Projects</Link>
-							<Link href='/learning'>Learning</Link>
-							<Link href='/experince'>Experince</Link>
+							<Link href='/courses'>Learning</Link>
+							<Link href='/roles'>Experince</Link>
 							<a
 								href='#'
 								onClick={(e: mouseEvent) => {

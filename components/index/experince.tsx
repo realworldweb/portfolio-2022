@@ -71,7 +71,7 @@ const Experince: FC<myProps> = ({ experince }) => {
 							</div>
 
 							<div>
-								<Link href='/experince'>
+								<Link href='/roles'>
 									<h4
 										className={`d-flex w-100 position-relative justify-content-end align-items-center p-4 p-sm-5 ${Styles.link}`}
 									>
