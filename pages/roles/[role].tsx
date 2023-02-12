@@ -19,11 +19,11 @@ import Styles from '../styles/modules/content.module.css';
 
 
 /*types*/
-import { education } from '../../lib/constants/data-types';
+import { experince } from '../../lib/constants/data-types';
 import { ParsedUrlQuery } from 'querystring'
 
 interface MyProps {
-	role: Array<education>;
+	role: Array<experince>;
 }
 
 interface IParams extends ParsedUrlQuery {
@@ -32,12 +32,12 @@ interface IParams extends ParsedUrlQuery {
 
 export const getStaticPaths: GetStaticPaths = async() => {
     // Call an external API endpoint to get posts
-    const roles: Array<education> = await getData('education');
+    const roles: Array<experince> = await getData('education');
   
     // Get the paths we want to pre-render based on posts
     const paths = roles.map((role) => ({
       
-      params: { roleName: role.title.replaceAll(" ", "-") },
+      params: { roleName: role.employer.replaceAll(" ", "-") },
 
     }))
   
@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 
     
-	const role: Array<education> = await getData('education', {role: roleName.replaceAll("-", " ")});
+	const role: Array<experince> = await getData('experince', {role: roleName.replaceAll("-", " ")});
 
 
    

@@ -19,25 +19,25 @@ import Styles from '../styles/modules/content.module.css';
 
 
 /*types*/
-import { project } from '../../lib/constants/data-types';
+import { education } from '../../lib/constants/data-types';
 import { ParsedUrlQuery } from 'querystring'
 
 interface MyProps {
-	project: Array<project>;
+	course: Array<education>;
 }
 
 interface IParams extends ParsedUrlQuery {
-    projectName: string
+    courseName: string
 }
 
 export const getStaticPaths: GetStaticPaths = async() => {
     // Call an external API endpoint to get posts
-    const projects: Array<project> = await getData('projects');
+    const courses: Array<education> = await getData('courses');
   
     // Get the paths we want to pre-render based on posts
-    const paths = projects.map((project) => ({
+    const paths = courses.map((course) => ({
       
-      params: { projectName: project.project.replaceAll(" ", "-") },
+      params: { courseName: course.title.replaceAll(" ", "-") },
 
     }))
   
@@ -48,28 +48,28 @@ export const getStaticPaths: GetStaticPaths = async() => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     
-    const { projectName } = context.params as IParams;
+    const { courseName } = context.params as IParams;
 
 
     
-	const project: Array<project> = await getData('projects', {project: projectName.replaceAll("-", " ")});
+	const course: Array<education> = await getData('experince', {course: courseName.replaceAll("-", " ")});
 
 
    
 
 	return {
 		props: {
-			project,
+			course,
 		},
 	};
 }
 
-const Project: NextPageWithLayout<MyProps> = ({ project }) => {
+const Course: NextPageWithLayout<MyProps> = ({ course }) => {
   
 	return (
 		<>
 			<Head>
-				<title>Realworldweb projects</title>
+				<title>Realworldweb courses</title>
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
 			</Head>
 			<main>
@@ -79,8 +79,8 @@ const Project: NextPageWithLayout<MyProps> = ({ project }) => {
 	);
 };
 
-Project.getLayout = function getLayout(page: ReactElement) {
+Course.getLayout = function getLayout(page: ReactElement) {
 	return <Layout>{page}</Layout>;
 };
 
-export default Project;
+export default Course;
