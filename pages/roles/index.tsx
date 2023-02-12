@@ -18,7 +18,7 @@ import ContentControls from '../../components/content-pages/content-controls';
 import Layout from '../../layouts/main'
 
 /*styles*/
-import Styles from '../styles/modules/content.module.css';
+import Styles from '../../styles/modules/content.module.css';
 
 /*types*/
 import { experince } from '../../lib/constants/data-types';
