@@ -16,9 +16,8 @@ import {
 
 /*styles*/
 import Styles from '../../styles/modules/contact.module.css';
-import { SvgEnvelope, SvgGithub, SvgLinkedin, SvgPhone } from '../assets/svgs';
+import { SVGCodewars, SvgEnvelope, SvgGithub, SvgHackerrank, SvgLeetcode, SvgLinkedin, SvgPhone } from '../assets/svgs';
 import PulsingGrid from '../assets/animations/pulsing-grid';
-
 
 const Contact = () => {
 	const [email, setEmail] = useState<string>('');
@@ -38,7 +37,7 @@ const Contact = () => {
 		}
 		if (!email && !phone) {
 			setError('please enter a means of contact');
-			return
+			return;
 		}
 		if (!message) {
 			setError('please enter a message');
@@ -178,7 +177,11 @@ const Contact = () => {
 													placeholder='Write your message...'
 												/>
 											</div>
-											{error ? <p className='bg-white text-center rounded-pill text-danger'>{error}</p> : null}
+											{error ? (
+												<p className='bg-white text-center rounded-pill text-danger'>
+													{error}
+												</p>
+											) : null}
 											<div>
 												<input
 													name='submit'
@@ -213,23 +216,13 @@ const Contact = () => {
 									paulrooney60@gmail.com
 								</a>
 							</p>
-							<p>
-								<SvgGithub width='1.3rem' height='1.3rem' />
-								&nbsp;
-								<a
-									href='https://github.com/realworldweb'
-									rel='noreferrer'
-									target='_blank'
-								>
-									https://github.com/realworldweb
-								</a>
-							</p>
-							<p>
-								<SvgLinkedin width='1.3rem' height='1.3rem' />
-								&nbsp;
-								<a href='https://www.linkedin.com/in/paul-rooney-6760b0b5/'>
-									https://www.linkedin.com/in/paul-rooney-6760b0b5/
-								</a>
+							<h4>Social links</h4>
+							<p className='d-flex' style={{ gap: "10px" }}>
+								<a href="https://github.com/realworldweb" target="_blank"><SvgGithub width='2.2rem' height='2.2rem' /></a>
+								<a href="https://www.linkedin.com/in/paul-rooney-6760b0b5/" target="_blank"><SvgLinkedin width='2.2rem' height='2.2rem' /></a>
+								<a href="https://www.codewars.com/users/realworldweb" target="_blank"><SVGCodewars width="2rem" height="2rem" /></a>
+								<a href="https://www.hackerrank.com/paulrooney60" target="_blank"><SvgHackerrank width="2rem" height="2rem" /></a>
+								<a href="https://leetcode.com/realworldweb/" target="_blank"><SvgLeetcode width="2rem" height="2rem" /></a>
 							</p>
 						</div>
 					</div>

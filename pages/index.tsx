@@ -21,6 +21,7 @@ const Experince = dynamic(() => import(/* webpackChunkName: "experince" */ '../c
 const Education = dynamic(() => import(/* webpackChunkName: "education" */ '../components/index/education'));
 const Quotes = dynamic(() => import(/* webpackChunkName: "quotes" */ '../components/index/quotes'));
 
+
 /*types*/
 import { education, experince, project } from '../lib/constants/data-types';
 
