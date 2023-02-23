@@ -87,7 +87,7 @@ function Header() {
 						<span />
 						<span />
 						<span />
-						<div className={Styles.splash} />
+						<span className={Styles.splash} />
 					</button>
 					<Link href='/' className={`d-inline-flex position-relative ml-2 ${Styles.customBrand} ${scroll > 0 ? Styles.customBrandSmall: ""}`}>
 						RealworldWeb
