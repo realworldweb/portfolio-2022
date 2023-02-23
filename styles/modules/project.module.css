@@ -1,0 +1,65 @@
+.projectTech, .projectDetails, .projectMore{
+   width : 85%;
+}
+
+.projectTech{
+    h4{
+        font-size: 1.2em;
+        text-transform: unset;
+    }
+
+    ul{
+        gap : 30px;
+    }
+}
+
+.projectDetails{
+    padding-top: 5vh;
+
+    @media($md){
+        padding-left: 37vw;
+    }
+
+    @media($lg){
+        padding-left: 30vw;
+    }
+}
+
+.projectImage{
+  width: 53vw;
+  min-width: 280px;
+  max-width: 475px;
+  position: relative;
+  box-shadow: 0 2px 2px hexToRgba(#333,0.5);
+  border-radius: 5px;
+  border: 2px solid hexToRgba(#333,0.5);
+  z-index: 5;
+
+  @media($md){
+    width: 43vw;
+    top: -5%;
+    left: -4%;
+    position: absolute;
+  }
+
+  @media($lg){
+    width: 35vw;
+  }
+
+  @media($xl){
+    left: -3%;
+  }
+}
+
+.projectLink{
+    background-color: #333;
+    border: 1px solid #333;
+    color: $yellow;
+    gap: 20px;
+
+    &:hover{
+        background-color: #333;
+        border: 1px solid $orange;
+        color: $orange;
+    }
+}

@@ -121,8 +121,16 @@ p {
   color: #ffffff;
 }
 
+.color-black {
+  color: #333;
+}
+
 .color-yellow {
   color: $yellow;
+}
+
+.color-orange {
+  color: $orange;
 }
 
 .color-blue{
@@ -133,12 +141,16 @@ p {
   background: $yellow;
 }
 
+.bg-orange {
+  background: $orange;
+}
+
 .bg-white {
   background: #ffffff;
 }
 
-.bg-dark {
-  background: #161616;
+.bg-darklight {
+  background: #333;
 }
 
 .bg-blue{
