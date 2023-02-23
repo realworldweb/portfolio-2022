@@ -1,5 +1,5 @@
 /*react*/
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 /*next*/
 import Link from 'next/link';
@@ -15,7 +15,13 @@ function Header() {
 	const router = useRouter();
 	const { asPath } = router;
 
-	const [scroll, setScroll] = useState<number>(0)
+	const [scroll, setScroll] = useState<number>(0);
+	const [loaded, setLoaded] = useState<boolean>(false);
+
+	useEffect(() => {
+       setLoaded(prev => prev === true ? prev : true) ;
+    }, []);
+
 
 	const navToggle = useRef<HTMLDivElement>(null);
 
@@ -97,35 +103,35 @@ function Header() {
 				<nav className={`nav flex-nowrap ${Styles.menu}`}>
 					<span
 						className={`${Styles.standardLink} ${
-							asPath === '/' ? Styles.activeLink : ''
+							loaded && asPath === '/' ? Styles.activeLink : ''
 						}`}
 					>
 						<Link href='/'>Home</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
-							asPath === '/projects' ? Styles.activeLink : ''
+							loaded && asPath === '/projects' ? Styles.activeLink : ''
 						}`}
 					>
 						<Link href='/projects'>Projects</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
-							asPath === '/courses' ? Styles.activeLink : ''
+							loaded && asPath === '/courses' ? Styles.activeLink : ''
 						}`}
 					>
 						<Link href='/courses'>Learning</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
-							asPath === '/roles' ? Styles.activeLink : ''
+							loaded && asPath === '/roles' ? Styles.activeLink : ''
 						}`}
 					>
 						<Link href='/roles'>Experince</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
-							asPath === '/contact' ? Styles.activeLink : ''
+							loaded && asPath === '/contact' ? Styles.activeLink : ''
 						}`}
 					>
 						<a href='#contact'>Contact</a>

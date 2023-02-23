@@ -92,7 +92,7 @@ const Project: NextPageWithLayout<MyProps> = ({ projects }) => {
 								width='500'
 								height='350'
 								style={{ objectFit: 'cover', width: '100%', height: 'auto' }}
-							/>
+							priority/>
 						</div>
 						<div className='d-flex mt-3 flex-column'>
 							<h1 className='text-center color-dark fw-bold'>

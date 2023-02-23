@@ -1,5 +1,5 @@
 /*react*/
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 /*next*/
 import Link from 'next/link';
@@ -16,7 +16,15 @@ import {
 
 /*styles*/
 import Styles from '../../styles/modules/contact.module.css';
-import { SVGCodewars, SvgEnvelope, SvgGithub, SvgHackerrank, SvgLeetcode, SvgLinkedin, SvgPhone } from '../assets/svgs';
+import {
+	SVGCodewars,
+	SvgEnvelope,
+	SvgGithub,
+	SvgHackerrank,
+	SvgLeetcode,
+	SvgLinkedin,
+	SvgPhone,
+} from '../assets/svgs';
 import PulsingGrid from '../assets/animations/pulsing-grid';
 
 const Contact = () => {
@@ -27,6 +35,13 @@ const Contact = () => {
 	const [message, setMessage] = useState<string>('');
 	const [emailSent, setEmailSent] = useState<String>('init');
 	const [error, setError] = useState<String>('');
+	const [loaded, setLoaded] = useState<boolean>(false);
+
+	useEffect(() => {
+		if (!loaded) {
+			setLoaded((prev) => (prev === false ? true : prev));
+		}
+	}, [loaded]);
 
 	const handleContact = (e: formEvent) => {
 		e.preventDefault();
@@ -97,10 +112,10 @@ const Contact = () => {
 									<h3 className='d-flex mx-auto text-white'>
 										Sending your Email
 									</h3>
-									<h5 className='d-flex flex-column align-items-center position-relative w-75 mx-auto text-white'>
+									<div className='d-flex flex-column align-items-center position-relative w-75 mx-auto text-white'>
 										Please wait
 										<PulsingGrid />
-									</h5>
+									</div>
 								</>
 							) : (
 								<>
@@ -212,17 +227,49 @@ const Contact = () => {
 							<p>
 								<SvgEnvelope width='1.3rem' height='1.3rem' />
 								&nbsp;
-								<a href='mailto:paulrooney60@gmail.com'>
-									paulrooney60@gmail.com
-								</a>
+								{loaded ? (
+									<a href={'mailto:paulrooney60@gmail.com'}>
+										paulrooney60@gmail.com
+									</a>
+								) : null}
 							</p>
 							<h4>Social links</h4>
-							<p className='d-flex' style={{ gap: "10px" }}>
-								<a href="https://github.com/realworldweb" target="_blank" rel="noreferrer"><SvgGithub width='2.2rem' height='2.2rem' /></a>
-								<a href="https://www.linkedin.com/in/paul-rooney-6760b0b5/" target="_blank" rel="noreferrer"><SvgLinkedin width='2.2rem' height='2.2rem' /></a>
-								<a href="https://www.codewars.com/users/realworldweb" target="_blank" rel="noreferrer"><SVGCodewars width="2rem" height="2rem" /></a>
-								<a href="https://www.hackerrank.com/paulrooney60" target="_blank" rel="noreferrer"><SvgHackerrank width="2rem" height="2rem" /></a>
-								<a href="https://leetcode.com/realworldweb/" target="_blank" rel="noreferrer"><SvgLeetcode width="2rem" height="2rem" /></a>
+							<p className='d-flex' style={{ gap: '10px' }}>
+								<a
+									href='https://github.com/realworldweb'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<SvgGithub width='2.2rem' height='2.2rem' />
+								</a>
+								<a
+									href='https://www.linkedin.com/in/paul-rooney-6760b0b5/'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<SvgLinkedin width='2.2rem' height='2.2rem' />
+								</a>
+								<a
+									href='https://www.codewars.com/users/realworldweb'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<SVGCodewars width='2rem' height='2rem' />
+								</a>
+								<a
+									href='https://www.hackerrank.com/paulrooney60'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<SvgHackerrank width='2rem' height='2rem' />
+								</a>
+								<a
+									href='https://leetcode.com/realworldweb/'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<SvgLeetcode width='2rem' height='2rem' />
+								</a>
 							</p>
 						</div>
 					</div>
@@ -238,15 +285,17 @@ const Contact = () => {
 							<Link href='/projects'>Projects</Link>
 							<Link href='/courses'>Learning</Link>
 							<Link href='/roles'>Experince</Link>
-							<a
-								href='#'
-								onClick={(e: mouseEvent) => {
-									e.preventDefault();
-									window.scrollTo(0, 0);
-								}}
-							>
-								Back to top
-							</a>
+							{loaded ? (
+								<a
+									href='#'
+									onClick={(e: mouseEvent) => {
+										e.preventDefault();
+										window.scrollTo(0, 0);
+									}}
+								>
+									Back to top
+								</a>
+							) : null}
 						</nav>
 					</div>
 				</div>
