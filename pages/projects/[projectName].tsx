@@ -103,7 +103,7 @@ const Project: NextPageWithLayout<MyProps> = ({ projects }) => {
 									href={project?.github}
 									className={`btn btn-link ${Styles.projectLink}`}
 									target='_blank'
-									rel='nofollow'
+									rel='noreferrer'
 								>
 									Github source
 								</a>
@@ -111,7 +111,7 @@ const Project: NextPageWithLayout<MyProps> = ({ projects }) => {
 									href={project?.url}
 									className={`btn btn-link ${Styles.projectLink}`}
 									target='_blank'
-									rel='nofollow'
+									rel='noreferrer'
 								>
 									Hosted example
 								</a>
