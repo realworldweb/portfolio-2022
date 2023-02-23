@@ -218,11 +218,11 @@ const Contact = () => {
 							</p>
 							<h4>Social links</h4>
 							<p className='d-flex' style={{ gap: "10px" }}>
-								<a href="https://github.com/realworldweb" target="_blank"><SvgGithub width='2.2rem' height='2.2rem' /></a>
-								<a href="https://www.linkedin.com/in/paul-rooney-6760b0b5/" target="_blank"><SvgLinkedin width='2.2rem' height='2.2rem' /></a>
-								<a href="https://www.codewars.com/users/realworldweb" target="_blank"><SVGCodewars width="2rem" height="2rem" /></a>
-								<a href="https://www.hackerrank.com/paulrooney60" target="_blank"><SvgHackerrank width="2rem" height="2rem" /></a>
-								<a href="https://leetcode.com/realworldweb/" target="_blank"><SvgLeetcode width="2rem" height="2rem" /></a>
+								<a href="https://github.com/realworldweb" target="_blank" rel="noreferrer"><SvgGithub width='2.2rem' height='2.2rem' /></a>
+								<a href="https://www.linkedin.com/in/paul-rooney-6760b0b5/" target="_blank" rel="noreferrer"><SvgLinkedin width='2.2rem' height='2.2rem' /></a>
+								<a href="https://www.codewars.com/users/realworldweb" target="_blank" rel="noreferrer"><SVGCodewars width="2rem" height="2rem" /></a>
+								<a href="https://www.hackerrank.com/paulrooney60" target="_blank" rel="noreferrer"><SvgHackerrank width="2rem" height="2rem" /></a>
+								<a href="https://leetcode.com/realworldweb/" target="_blank" rel="noreferrer"><SvgLeetcode width="2rem" height="2rem" /></a>
 							</p>
 						</div>
 					</div>
