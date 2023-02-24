@@ -20,9 +20,15 @@ import Styles from '../../styles/modules/project.module.css';
 
 /*types*/
 import { project } from '../../lib/constants/data-types';
+import { ParsedUrlQuery } from 'querystring';
 
 interface MyProps {
-	projects: Array<project>;
+	moreProjects: Array<project>;
+	project: project;
+}
+
+interface IParams extends ParsedUrlQuery {
+    projectName: string
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -37,36 +43,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context) => {
+	const { projectName } = context.params as IParams;
 	const projects: Array<project> = await getData('projects');
+	const project = projects.find(
+		(project) => project.project === projectName!.replaceAll('-', ' ')
+	);
+    const moreProjects = projects.filter((project) => project.project!== projectName!.replaceAll('-', ' '));
+
 
 	return {
 		props: {
-			projects,
+			moreProjects,
+			project
 		},
 	};
 };
 
-const Project: NextPageWithLayout<MyProps> = ({ projects }) => {
-	const router = useRouter();
-	const { asPath } = router;
-	const projectName = asPath.split('/')[2];
-	const project = projects.find(
-		(project) => project.project === projectName.replaceAll('-', ' ')
-	);
-	const moreProjects = projects
-		.reverse()
-		.reduce((acc: project[], project: project) => {
-			if (
-				project.project !== projectName.replaceAll('-', ' ') &&
-				acc.length < 5
-			) {
-				acc.push(project);
-			}
-
-			return acc;
-		}, []);
-
+const Project: NextPageWithLayout<MyProps> = ({ moreProjects, project }) => {
+	
 	return (
 		<>
 			<Head>

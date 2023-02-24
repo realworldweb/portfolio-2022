@@ -210,8 +210,8 @@ const Contact = () => {
 									</div>
 								</>
 							)}
-						</div>
-					</div>
+											</div>
+											</div>
 					<div className={`position-relative ${Styles.contactThumb}`}>
 						<div>
 							<h3 className='color-white'>Base camp</h3>
@@ -272,7 +272,7 @@ const Contact = () => {
 								</a>
 							</p>
 						</div>
-					</div>
+								</div>
 					<div className={`position-relative mx-auto ${Styles.contactThumb}`}>
 						<div>
 							<h2 className='color-white'>Realworldweb</h2>
@@ -297,7 +297,7 @@ const Contact = () => {
 								</a>
 							) : null}
 						</nav>
-					</div>
+								</div>
 				</div>
 			</div>
 		</section>

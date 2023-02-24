@@ -1,9 +1,13 @@
 /*react*/
 import { FC, ReactNode } from "react";
 
+/*next*/
+/*next*/
+import dynamic from 'next/dynamic';
+
 /*components*/
-import Contact from "../components/layout/contact";
 import Header from "../components/layout/header";
+const Contact = dynamic(() => import(/* webpackChunkName: "quotes" */ '../components/layout/contact'));
 
 /*styles*/
 import Styles from "../styles/layouts/main.module.css";
@@ -20,7 +24,7 @@ const headerOnly : FC<MyProps> =  ({children}) => {
         <div id="content" className={`d-flex flex-column w-100 position-relative ${Styles.content}`}>
             {children}
         </div>
-        <footer className={`d-flex flex-column w-100 position-relative ${Styles.content}`}><Contact/></footer>
+        <div className={`d-flex flex-column w-100 position-relative ${Styles.content}`}><Contact/></div>
     </div>
 
   }
