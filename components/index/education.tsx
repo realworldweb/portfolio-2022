@@ -28,10 +28,10 @@ const Education: FC<myProps> = ({education}) => {
 					<div
 						className={` col-12 col-md-8 col-lg-6 position-relative pt-2 ${Styles.content}`}
 					>
-						<div className='color-white education-thumb'>
+						<div className='education-thumb'>
 							<div>
 								<h1>My Education</h1>
-								<p className='color-white'>
+								<p>
 									My latest courses and knowledge updates.
 								</p>
 							</div>
@@ -40,7 +40,7 @@ const Education: FC<myProps> = ({education}) => {
 							{education.map( (edu, index) => {
 								return (<div className='media-body' key={index}>
 									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
-										<SvgLearning width='2rem' height='2rem' fill='#633' />
+										<SvgLearning width='2rem' height='2rem' fill='#2c2c2c' />
 										&nbsp;
 										<h3 className='d-block m-0'>
 										{edu.title}
@@ -48,7 +48,7 @@ const Education: FC<myProps> = ({education}) => {
 										&nbsp;
 										<span className='position-relative mx-auto m-md-0'>{edu.awardedBy}</span>
 									</div>
-									<p className='color-white position-relative mx-auto mx-md-0 p-2'>
+									<p className='position-relative mx-auto mx-md-0 p-2'>
 										{edu.description}
 									</p>
 								</div>)

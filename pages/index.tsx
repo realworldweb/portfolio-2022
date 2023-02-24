@@ -32,7 +32,7 @@ export async function getStaticProps() {
   const projectsData: Array<project> = await getData('projects');
   const educationData: Array<project> = await getData('education');
 
-  const projects: Array<project> = projectsData.filter((val, index) => index > projectsData.length -4 && val);
+  const projects: Array<project> = projectsData.filter((val, index) => index > projectsData.length -5 && val);
   const education: Array<project> = educationData.filter((val, index) => index > educationData.length -3 && val);
   const experince: Array<experince> = experinceData.filter((val, index) => index > experinceData.length -3 && val);
 

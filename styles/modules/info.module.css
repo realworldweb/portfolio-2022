@@ -2,6 +2,7 @@
 	background-color: #e9724c;
 }
 
+
 .education{
     background-color: #E3AE57;
 }
@@ -9,12 +10,16 @@
 .content {
 	left: 3%;
 
+    p,h1,h3,h4{
+        color: #2c2c2c;
+    }
+
 	h3 {
 		font-size: 1.3rem;
 	}
 
     span{
-        color: #633;
+        color: #2c2c2c;
         font-weight: 900;
         font-size: 0.8rem; 
 

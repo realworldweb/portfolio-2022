@@ -31,10 +31,10 @@ const Experince: FC<myProps> = ({ experince }) => {
 					<div
 						className={` col-12 col-md-8 col-lg-6 position-relative pt-2 ${Styles.content}`}
 					>
-						<div className={`color-white`}>
+						<div className={Styles.experince}>
 							<div>
 								<h1>My Experience</h1>
-								<p className='color-white'>Current and last role</p>
+								<p>Current and last role</p>
 							</div>
 
 							<div>
@@ -45,12 +45,12 @@ const Experince: FC<myProps> = ({ experince }) => {
 													<SvgExperince
 														width='2rem'
 														height='2rem'
-														fill='#633'
+														fill='#2c2c2c'
 													/>
 													&nbsp;
 													<h3 className='d-block m-0'>{exp.role}</h3>
 													&nbsp;
-													<h4 className='color-white position-relative mt-n1'>
+													<h4 className='position-relative mt-n1'>
 														({exp.employer})
 													</h4>
 													&nbsp;
@@ -58,7 +58,7 @@ const Experince: FC<myProps> = ({ experince }) => {
 														{exp.period}
 													</span>
 												</div>
-												<p className='color-white position-relative mx-auto mx-md-0 p-2'>
+												<p className='position-relative mx-auto mx-md-0 p-2'>
 													{exp.description}
 												</p>
 											</div>

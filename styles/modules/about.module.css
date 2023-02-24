@@ -33,6 +33,10 @@
   @media($xl){
     width: 48%;
   }
+
+  p{
+    color: #b0b0b0;
+  }
 }
 
 .link{
