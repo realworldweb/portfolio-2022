@@ -38,11 +38,7 @@ const Experince: FC<myProps> = ({ experince }) => {
 							</div>
 
 							<div>
-								{experince
-									.filter((exp: experince, index: number) =>
-										index < 2 ? exp : false
-									)
-									.map((exp: experince, index: number) => {
+								{experince.map((exp: experince, index: number) => {
 										return (
 											<div className='media-body' key={index}>
 												<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>

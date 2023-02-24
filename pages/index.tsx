@@ -28,9 +28,13 @@ import { education, experince, project } from '../lib/constants/data-types';
 //TODO: check loading between site page and home seems slow
 export async function getStaticProps() {
   
-  const experince: Array<experince> = await getData('experince');
-  const projects: Array<project> = await getData('projects');
-  const education: Array<project> = await getData('education');
+  const experinceData: Array<experince> = await getData('experince');
+  const projectsData: Array<project> = await getData('projects');
+  const educationData: Array<project> = await getData('education');
+
+  const projects: Array<project> = projectsData.filter((val, index) => index > projectsData.length -4 && val);
+  const education: Array<project> = educationData.filter((val, index) => index > educationData.length -3 && val);
+  const experince: Array<experince> = experinceData.filter((val, index) => index > experinceData.length -3 && val);
 
   return {
     props: {

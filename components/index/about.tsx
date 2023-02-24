@@ -16,10 +16,7 @@ interface myProps {
 }
 
 const About: FC<myProps> = ({ projects }) => {
-	const latestProjects = projects
-		.reverse()
-		.filter((project, index) => index < 4 && project);
-
+	
 	return (
 		<section
 			id='about'
@@ -36,7 +33,7 @@ const About: FC<myProps> = ({ projects }) => {
 						<div
 							className={`d-flex color-white flex-wrap ${Styles.skillThumb}`}
 						>
-							{latestProjects.map((project, index) => {
+							{projects.map((project, index) => {
 								return (
 									<Link href={`/projects/${project.project.replaceAll(" ","-")}`}
 										className={`d-flex flex-wrap my-2 mx-auto ${Styles.project}`}

@@ -21,8 +21,6 @@ interface myProps {
 
 const Education: FC<myProps> = ({education}) => {
 
-	const latestEducation = education.filter((val, index) => index > education.length -3 && val);
-
 	return (
 		<section id='education' className={`parallax-section ${Styles.education}`}>
 			<div className='d-flex w-100 position-relative'>
@@ -39,7 +37,7 @@ const Education: FC<myProps> = ({education}) => {
 							</div>
 
 							<div>
-							{latestEducation.map( (edu, index) => {
+							{education.map( (edu, index) => {
 								return (<div className='media-body' key={index}>
 									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
 										<SvgLearning width='2rem' height='2rem' fill='#633' />
