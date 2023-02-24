@@ -18,12 +18,16 @@ h4{
 }
 
 
-.serviceThumb {
+.serviceThumb, .serviceThumbBlue {
   padding: 52px 22px 52px 22px;
 
 }
 
 .serviceThumbBlue{
   background-color: $blue;
+  h4{
+    color: #e6e6e6;
+
+  }
 }
 
