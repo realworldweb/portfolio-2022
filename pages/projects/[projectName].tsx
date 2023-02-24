@@ -82,7 +82,7 @@ const Project: NextPageWithLayout<MyProps> = ({ moreProjects, project }) => {
 									.toLowerCase()}-sm.webp`}
 								alt='project image'
 								sizes='56vw,
-								        (max-width: 768px) 43vw,
+								        (max-width: 768px) 40vw,
                                         (max-width: 1200px) 37vw'
 								width='500'
 								height='350'
@@ -119,13 +119,13 @@ const Project: NextPageWithLayout<MyProps> = ({ moreProjects, project }) => {
 					<section
 						className={`d-flex flex-column align-items-center position-relative mx-auto bg-orange ${Styles.projectTech}`}
 					>
-						<h4 className={`d-flex text-center mt-2 text-white fw-bold`}>
+						<h3 className={`d-flex text-center mt-2 fw-bold`}>
 							Tech used
-						</h4>
+						</h3>
 						<ul className='d-flex position-relative w-75 flex-wrap px-4 mx-auto list-unstyled'>
 							{project?.tech.map((tech, index) => (
 								<li
-									className={`mx-1 mt-2 p-2 badge bg-darklight color-orange`}
+									className={`mx-auto mt-2 p-2 badge bg-darklight color-orange`}
 									key={index}
 								>
 									{tech}
@@ -141,10 +141,10 @@ const Project: NextPageWithLayout<MyProps> = ({ moreProjects, project }) => {
 						>
 							More projects
 						</h5>
-						<div className={`d-flex flex-wrap`}>
+						<div className={`d-flex w-100 flex-wrap`}>
 							{moreProjects.map((project, index) => (
 								<article
-									className={`d-flex flex-column mx-auto w-35 mx-1 mt-2 p-2 badge`}
+									className={`d-flex flex-column mx-auto mx-1 mt-2 p-2 badge ${Styles.projectThumb}`}
 									key={index}
 								>
 									<Link href={`/projects/${project?.project.replaceAll(' ', '-')}`}>
@@ -155,7 +155,7 @@ const Project: NextPageWithLayout<MyProps> = ({ moreProjects, project }) => {
 													.toLowerCase()}-sm.webp`}
 												alt='project image'
 												sizes='(max-width: 768px) 75vw,
-														   (max-width: 1200px) 20vw'
+														   (max-width: 1200px) 35vw'
 												width='500'
 												height='350'
 												style={{

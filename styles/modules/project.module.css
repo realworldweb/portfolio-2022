@@ -6,6 +6,7 @@
     h4{
         font-size: 1.2em;
         text-transform: unset;
+        color: #2c2c2c;
     }
 
     ul{
@@ -36,9 +37,9 @@
   z-index: 5;
 
   @media($md){
-    width: 43vw;
+    width: 40vw;
     top: -5%;
-    left: -4%;
+    left: -6%;
     position: absolute;
   }
 
@@ -47,7 +48,7 @@
   }
 
   @media($xl){
-    left: -3%;
+    left: -4%;
   }
 }
 
@@ -62,4 +63,17 @@
         border: 1px solid $orange;
         color: $orange;
     }
+}
+
+.projectThumb{
+  width: 75%;
+  max-width: 350px;
+  
+  @media($md){
+    width: 35%;
+  }
+
+  @media($lg){
+    width: 30%;
+  }
 }
