@@ -9,8 +9,8 @@
 		border: none;
 		border-bottom: 1px solid $yellow;
 		border-radius: 0px;
+		color: #333;
 		box-shadow: none;
-		color: #ffffff;
 		font-size: 18px;
 		margin-top: 10px;
 		margin-bottom: 25px;
@@ -22,28 +22,28 @@
 	}
 
 	input::-moz-placeholder, textarea::-moz-placeholder {
-		color: #ffffff;
+		color: #333;
 		opacity: 1;
 	}
 	input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-		color: #ffffff;
+		color: #333;
 	}
 	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
-		color: #ffffff;
+		color: #333;
 	}
 
 	input[type='submit'] {
-		background: #ffffff;
+		background: #333;
 		border: 2px solid transparent;
 		border-radius: 40px;
-		color: #161616;
+		color: $orange;
 		padding-bottom: 10px;
 	}
 
 	input[type='submit']:hover {
-		background: transparent;
-		border-color: #ffffff;
-		color: #ffffff;
+		background: #333;
+		border-color: $yellow;
+		color: $yellow;
 	}
 }
 
@@ -63,6 +63,10 @@
 
 .contactThumb{
 	height: fit-content;
+
+	p{
+		color: #b0b0b0;
+	}
 }
 
 .contactForm{

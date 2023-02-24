@@ -100,19 +100,19 @@ const Contact = () => {
 						<div className={`d-flex pt-2 flex-column ${Styles.contactForm}`}>
 							{emailSent === 'success' ? (
 								<>
-									<h3 className='d-flex mx-auto text-white'>
+									<h3 className='d-flex mx-auto'>
 										Email sent successfully
 									</h3>
-									<p className='d-flex mx-auto text-white'>
+									<p className='d-flex mx-auto'>
 										your mail has been sent to paulrooney60@gmail.com
 									</p>
 								</>
 							) : emailSent === 'working' ? (
 								<>
-									<h3 className='d-flex mx-auto text-white'>
+									<h3 className='d-flex mx-auto'>
 										Sending your Email
 									</h3>
-									<div className='d-flex flex-column align-items-center position-relative w-75 mx-auto text-white'>
+									<div className='d-flex flex-column align-items-center position-relative w-75 mx-auto'>
 										Please wait
 										<PulsingGrid />
 									</div>
@@ -120,8 +120,8 @@ const Contact = () => {
 							) : (
 								<>
 									<div className='d-flex flex-column position-relative'>
-										<h1 className='color-white'>Say hello...</h1>
-										<p className='color-white'>
+										<h1>Say hello...</h1>
+										<p>
 											Drop a message below to reach my inbox.
 										</p>
 									</div>
