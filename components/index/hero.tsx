@@ -18,13 +18,11 @@ function Hero() {
 						<Image
 							src={heroImg}
 							alt='hardworking UX frontend focused fullstack developer'
-							width= "1300"
-							height="731"
 							sizes='100vw
 							(max-width: 768px) 80vw,
               (max-width: 1200px) 50vw,'
-			  fill
-
+			  style={{objectFit: 'cover'}}
+                         fill
 
 						priority/>
 					</div>
