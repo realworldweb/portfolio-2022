@@ -17,6 +17,7 @@
 .heroImg {
 	height: 360px;
 	filter: grayscale(100%);
+	z-index: -10;
 
 	@media ($sm) {
 		height: 500px;

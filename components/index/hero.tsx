@@ -17,11 +17,15 @@ function Hero() {
 					>
 						<Image
 							src={heroImg}
-							fill
 							alt='hardworking UX frontend focused fullstack developer'
-							sizes='(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw'
+							width= "1300"
+							height="731"
+							sizes='100vw
+							(max-width: 768px) 80vw,
+              (max-width: 1200px) 50vw,'
+			  fill
+
+
 						priority/>
 					</div>
 
