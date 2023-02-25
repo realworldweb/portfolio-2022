@@ -55,6 +55,7 @@ const  Home: NextPageWithLayout<MyProps> = ({experince, projects, education}) =>
       <Head>
           <title>Realworldweb portfolio</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="description" content="Portfolio site setup with react and next.js to showcase current projects and social kata accounts." />
         </Head>
       <main>
       <Hero/>

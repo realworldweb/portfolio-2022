@@ -1,5 +1,5 @@
 /*react*/
-import {FC} from 'react'
+import { FC } from 'react';
 
 /*next*/
 import Image from 'next/image';
@@ -19,8 +19,7 @@ interface myProps {
 	education: Array<education>;
 }
 
-const Education: FC<myProps> = ({education}) => {
-
+const Education: FC<myProps> = ({ education }) => {
 	return (
 		<section id='education' className={`parallax-section ${Styles.education}`}>
 			<div className='d-flex w-100 position-relative'>
@@ -31,36 +30,47 @@ const Education: FC<myProps> = ({education}) => {
 						<div className='education-thumb'>
 							<div>
 								<h1>My Education</h1>
-								<p>
-									My latest courses and knowledge updates.
-								</p>
+								<p>My latest courses and knowledge updates.</p>
 							</div>
 
 							<div>
-							{education.map( (edu, index) => {
-								return (<div className='media-body' key={index}>
-									<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
-										<SvgLearning width='2rem' height='2rem' fill='#2c2c2c' />
-										&nbsp;
-										<h3 className='d-block m-0'>
-										{edu.title}
-										</h3>
-										&nbsp;
-										<span className='position-relative mx-auto m-md-0'>{edu.awardedBy}</span>
-									</div>
-									<p className='position-relative mx-auto mx-md-0 p-2'>
-										{edu.description}
-									</p>
-								</div>)
+								{education.map((edu, index) => {
+									return (
+										<div className='media-body' key={index}>
+											<Link
+												href={`/courses/${edu.title.replaceAll(' ', '-')}`}
+											>
+												<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
+													<SvgLearning
+														width='2rem'
+														height='2rem'
+														fill='#2c2c2c'
+													/>
+													&nbsp;
+													<h3 className='d-block m-0'>{edu.title}</h3>
+													&nbsp;
+													<span className='position-relative mx-auto m-md-0'>
+														{edu.awardedBy}
+													</span>
+												</div>
+												<p className='position-relative mx-auto mx-md-0 p-2'>
+													{edu.description}
+												</p>
+											</Link>
+										</div>
+									);
 								})}
 							</div>
-								<Link href='/courses'>
-									<h4
-										className={`d-flex w-100 position-relative justify-content-end p-4 p-sm-5 align-items-center ${Styles.link}`}
-									>
-										See more&nbsp;<span className='d-inline position-relative pb-1'>&raquo;</span>
-									</h4>
-								</Link>
+							<Link href='/courses'>
+								<h4
+									className={`d-flex w-100 position-relative justify-content-end p-4 p-sm-5 align-items-center ${Styles.link}`}
+								>
+									See more&nbsp;
+									<span className='d-inline position-relative pb-1'>
+										&raquo;
+									</span>
+								</h4>
+							</Link>
 						</div>
 					</div>
 

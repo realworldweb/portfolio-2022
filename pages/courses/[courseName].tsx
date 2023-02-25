@@ -1,12 +1,11 @@
 /*react*/
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 
 /*next*/
 import type { NextPageWithLayout } from '../_app';
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
+
 
 /*data*/
 import { getData } from '../../lib/data/data';
@@ -15,7 +14,7 @@ import { getData } from '../../lib/data/data';
 import Layout from '../../layouts/main';
 
 /*styles*/
-import Styles from '../styles/modules/content.module.css';
+import Styles from '../styles/modules/course.module.css';
 
 
 /*types*/
@@ -32,7 +31,7 @@ interface IParams extends ParsedUrlQuery {
 
 export const getStaticPaths: GetStaticPaths = async() => {
     // Call an external API endpoint to get posts
-    const courses: Array<education> = await getData('courses');
+    const courses: Array<education> = await getData('education');
   
     // Get the paths we want to pre-render based on posts
     const paths = courses.map((course) => ({
@@ -52,7 +51,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 
     
-	const course: Array<education> = await getData('experince', {title: courseName.replaceAll("-", " ")});
+	const course: Array<education> = await getData('education', {title: courseName.replaceAll("-", " ")});
 
 
    
