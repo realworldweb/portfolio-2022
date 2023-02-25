@@ -13,6 +13,7 @@
 .aboutThumb,
 .skillThumb {
   padding: 22px 32px 32px 32px;
+  gap: 20px;
 }
 
 .project{
@@ -26,6 +27,13 @@
 .projectImage{
   min-width: 250px;
   min-height: 200px;
+  max-width: 350px;
+  width: 80vw;
+
+  @media($md){
+    width: 20vw;
+  }
+  
 
 }
 

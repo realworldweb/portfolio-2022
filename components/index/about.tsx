@@ -47,9 +47,12 @@ const About: FC<myProps> = ({ projects }) => {
 													.replaceAll(' ', '-')
 													.toLowerCase()}-sm.webp`}
 												alt='project image'
-												sizes='(max-width: 768px) 98vw,
-                                                       (max-width: 1200px) 20vw'
-												fill
+												width='500'
+								                height='350'
+												sizes='80vw,(max-width: 768px) 20vw,
+                                                       '
+												style={{width: '100%', height: 'auto', objectFit: 'cover'}}
+
 											/>
 										</div>
 										<div
