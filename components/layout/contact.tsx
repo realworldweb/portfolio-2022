@@ -239,6 +239,7 @@ const Contact = () => {
 									href='https://github.com/realworldweb'
 									target='_blank'
 									rel='noreferrer'
+									aria-label='github'
 								>
 									<SvgGithub width='2.2rem' height='2.2rem' />
 								</a>
@@ -246,6 +247,7 @@ const Contact = () => {
 									href='https://www.linkedin.com/in/paul-rooney-6760b0b5/'
 									target='_blank'
 									rel='noreferrer'
+									aria-label='linkedin'
 								>
 									<SvgLinkedin width='2.2rem' height='2.2rem' />
 								</a>
@@ -253,6 +255,7 @@ const Contact = () => {
 									href='https://www.codewars.com/users/realworldweb'
 									target='_blank'
 									rel='noreferrer'
+									aria-label='codewars'
 								>
 									<SVGCodewars width='2rem' height='2rem' />
 								</a>
@@ -260,6 +263,8 @@ const Contact = () => {
 									href='https://www.hackerrank.com/paulrooney60'
 									target='_blank'
 									rel='noreferrer'
+									aria-label='hackerrank'
+
 								>
 									<SvgHackerrank width='2rem' height='2rem' />
 								</a>
@@ -267,6 +272,8 @@ const Contact = () => {
 									href='https://leetcode.com/realworldweb/'
 									target='_blank'
 									rel='noreferrer'
+									aria-label='leetcode'
+
 								>
 									<SvgLeetcode width='2rem' height='2rem' />
 								</a>
