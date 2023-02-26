@@ -1,0 +1,50 @@
+.courseTech, .courseDetails, .courseMore{
+    width : 85%;
+ }
+ 
+ .courseTech{
+     h4{
+         font-size: 1.2em;
+         text-transform: unset;
+         color: #2c2c2c;
+     }
+ 
+     ul{
+         gap : 30px;
+     }
+ }
+ 
+ .courseDetails{
+     padding-top: 5vh;
+ 
+ }
+ 
+ .courseLink{
+     background-color: #333;
+     border: 1px solid #333;
+     color: $yellow;
+     gap: 20px;
+ 
+     &:hover{
+         background-color: #333;
+         border: 1px solid $orange;
+         color: $orange;
+     }
+ }
+ 
+ .courseThumb{
+   width: 75%;
+   max-width: 350px;
+   
+   @media($md){
+     width: 35%;
+   }
+ 
+   @media($lg){
+     width: 30%;
+   }
+ }
+
+ .courseThumbTitle{
+     font-size: 1.2em;
+ }
