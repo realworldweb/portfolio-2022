@@ -74,18 +74,19 @@ const  Courses: NextPageWithLayout<MyProps> = ({ courses }) => {
             {current.map((course: education, index: number) => {
               return (
               <article
-                className={`d-flex align-items-center position-relative flex-column flex-lg-row my-2 p-2 py-3 mx-auto ${Styles.course}`}
+                className={`d-flex position-relative flex-column flex-lg-row my-2 p-2 py-3 mx-auto ${Styles.course}`}
                 key={index}
               >
                 <Link
 												href={`/courses/${course.title.replaceAll(' ', '-')}`}
+                        style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', marginInline: 'auto', alignItems: 'center',}}
 											>
                 <div
-                  className={`d-flex mx-auto fw-bold flex-column align-items-center ${Styles.courseInfo}`}
+                  className={`d-flex fw-bold flex-column ${Styles.courseInfo}`}
                 >
-                  <h5 className='color-blue fw-bolder'>{course.title}</h5>
-                  <p className='text-center color-blue'>{course.description}</p>
-                  <div>
+                  <h5 className='color-blue text-center fw-bolder'>{course.title}</h5>
+                  <p className='text-center'>{course.description}</p>
+                  <div className='d-flex mx-auto flex-wrap'>
                     {course.tech.map((tech, index) => {
                       return (
                         <span
