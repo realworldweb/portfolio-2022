@@ -6,6 +6,8 @@ import { useState } from 'react';
 /*next*/
 import type { NextPageWithLayout } from '../_app';
 import Head from 'next/head'
+import Link from 'next/link'
+
 
 /*data*/
 import { getData } from '../../lib/data/data';
@@ -78,6 +80,9 @@ const  Experince: NextPageWithLayout<MyProps> = ({ roles }) => {
   
                 key={index}
               >
+                <Link
+												href={`/roles/${role.employer.replaceAll(' ', '-')}`}
+											>
                 <div
                   className={`d-flex mx-auto fw-bold flex-column align-items-center ${Styles.roleInfo}`}
                 >
@@ -96,6 +101,7 @@ const  Experince: NextPageWithLayout<MyProps> = ({ roles }) => {
                     })}
                   </div>
                 </div>
+                </Link>
               </article>
               );
             })}

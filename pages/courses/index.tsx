@@ -6,6 +6,7 @@ import { useState } from 'react';
 /*next*/
 import type { NextPageWithLayout } from '../_app';
 import Head from 'next/head'
+import Link from 'next/link';
 
 /*data*/
 import { getData } from '../../lib/data/data';
@@ -76,6 +77,9 @@ const  Courses: NextPageWithLayout<MyProps> = ({ courses }) => {
                 className={`d-flex align-items-center position-relative flex-column flex-lg-row my-2 p-2 py-3 mx-auto ${Styles.course}`}
                 key={index}
               >
+                <Link
+												href={`/courses/${course.title.replaceAll(' ', '-')}`}
+											>
                 <div
                   className={`d-flex mx-auto fw-bold flex-column align-items-center ${Styles.courseInfo}`}
                 >
@@ -94,6 +98,7 @@ const  Courses: NextPageWithLayout<MyProps> = ({ courses }) => {
                     })}
                   </div>
                 </div>
+                </Link>
               </article>
               );
             })}

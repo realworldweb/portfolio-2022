@@ -7,8 +7,8 @@ function Services() {
      <div className="d-flex w-100">
           <div className="row">
                <div className="col-lg-3 col-md-6">
-                    <div className={`d-flex flex-column align-items-center  ${Styles.serviceThumb}`}>
-                         <SvgHTML5 width="5rem" height="5rem" fill="#2c2c2c" />
+                    <div className={`d-flex flex-column align-items-center  ${Styles.serviceThumbOrange}`}>
+                         <SvgHTML5 width="5rem" height="5rem" fill="#e6e6e6" />
                               <h4>HTML & CSS</h4>
                               <p className="d-block position-relative text-center">Proficent with semantic HTML5 and CSS3 along with pre-processors such as sass and postcss, experinced with css frameworks like bootstrap</p>
                     </div>

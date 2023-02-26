@@ -41,6 +41,9 @@ const Experince: FC<myProps> = ({ experince }) => {
 								{experince.map((exp: experince, index: number) => {
 										return (
 											<div className='media-body' key={index}>
+												<Link
+												href={`/roles/${exp.employer.replaceAll(' ', '-')}`}
+											>
 												<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
 													<SvgExperince
 														width='2rem'
@@ -61,6 +64,7 @@ const Experince: FC<myProps> = ({ experince }) => {
 												<p className='position-relative mx-auto mx-md-0 p-2'>
 													{exp.description}
 												</p>
+												</Link>
 											</div>
 										);
 									})}
