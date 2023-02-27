@@ -1,13 +1,21 @@
-import Image from 'next/image';
+/*react*/
+import { FC } from 'react';
 
 /*assests*/
 import { SvgStar } from '../assets/svgs';
-import parallax from '../../public/quotes.jpg';
+
 
 /*styles*/
 import Styles from '../../styles/modules/quotes.module.css';
 
-const Quotes = () => {
+/*types*/
+import { feedback } from '../../lib/constants/data-types';
+
+interface myProps {
+	feedback: feedback[],
+}
+
+const Quotes: FC<myProps>  = ({feedback}) => {
 	return (
 		<section id='quotes' className={`parallax-section ${Styles.quotes}`}>
 			<div className={Styles.overlay} />

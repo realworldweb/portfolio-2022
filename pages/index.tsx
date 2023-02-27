@@ -23,23 +23,26 @@ const Quotes = dynamic(() => import(/* webpackChunkName: "quotes" */ '../compone
 
 
 /*types*/
-import { education, experince, project } from '../lib/constants/data-types';
+import { education, experince, project, feedback } from '../lib/constants/data-types';
 
 export async function getStaticProps() {
   
   const experinceData: Array<experince> = await getData('experince');
   const projectsData: Array<project> = await getData('projects');
   const educationData: Array<education> = await getData('education');
+  const feedbackData: Array<feedback> = await getData('feedback');
 
   const projects: Array<project> = projectsData.filter((val, index) => index > projectsData.length -5 && val);
   const education: Array<education> = educationData.filter((val, index) => index > educationData.length -3 && val);
   const experince: Array<experince> = experinceData.filter((val, index) => index > experinceData.length -3 && val);
+  const feedback: Array<feedback> = feedbackData.filter((val, index) => index > feedbackData.length -3 && val);
 
   return {
     props: {
       experince,
       projects,
       education,
+      feedback
     },
   };
 }
@@ -47,8 +50,9 @@ interface MyProps{
   experince: Array<experince>;
   projects: Array<project>;
   education: Array<education>;
+  feedback: Array<feedback>;
 }
-const  Home: NextPageWithLayout<MyProps> = ({experince, projects, education}) => {
+const  Home: NextPageWithLayout<MyProps> = ({experince, projects, education, feedback}) => {
 
   return (
   <>
@@ -63,7 +67,7 @@ const  Home: NextPageWithLayout<MyProps> = ({experince, projects, education}) =>
       <Services/>
       <Experince experince={experince}/>
       <Education education={education}/>
-      <Quotes/>
+      <Quotes feedback={feedback}/>
       </main> 
   </>
   )
