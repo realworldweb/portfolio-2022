@@ -1,0 +1,24 @@
+.submitFeedback {
+	width: 100%;
+
+	@media ($md) {
+		width: 25%;
+	}
+}
+
+.currentFeedback {
+	width: 100%;
+
+	@media ($md) {
+		width: 75%;
+	}
+}
+
+.feedback {
+	width: 32%;
+	min-width: 200px;
+
+	p {
+		color: $yellow;
+	}
+}
