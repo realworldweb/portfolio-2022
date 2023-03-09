@@ -58,7 +58,7 @@ const Feedback: NextPageWithLayout<MyProps> = ({ feedback }) => {
 		e.preventDefault();
 
 		axios
-			.post('/api/data', data, axiosConfig)
+			.post(`/api/data`, data, axiosConfig)
 			.then(() => {
 				setFeedbackUploaded('success');
 			})

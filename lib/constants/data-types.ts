@@ -34,4 +34,12 @@ interface education {
 	awardedBy: string;
 }
 
-export type { experince, project, education, fields, feedback };
+interface mailing {
+	phone: string | null;
+	subject: string | null;
+	email: string | null;
+	name: string | null;
+	message: string | null;
+}
+
+export type { experince, project, education, fields, feedback, mailing };

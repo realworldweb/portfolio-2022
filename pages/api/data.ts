@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import axios from 'axios';
+
 // @ts-ignore
 import NextCors from 'nextjs-cors';
 import { feedback } from '../../lib/constants/data-types';
@@ -26,6 +28,21 @@ const insertData = async (get: string, data?: any) => {
 	}
 };
 
+const data = {
+	email: '',
+	name: '',
+	message: 'Approve feedback',
+	subject: 'Approve feedback',
+	phone: '',
+};
+
+const axiosConfig = {
+	headers: {
+		'Content-Type': 'application/json;charset=UTF-8',
+		'Access-Control-Allow-Origin': '*',
+	},
+};
+
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<any>
@@ -41,7 +58,9 @@ export default async function handler(
 		feedback: '',
 		name: 'Anon',
 	};
-
+	const url = req.headers.host?.includes('localhost')
+		? `http://${req.headers.host}`
+		: `https://${req.headers.host}`;
 	if (req.body) {
 		for (const key in req.body) {
 			feedbackDetails[key as keyof feedback] = req.body[key as keyof feedback];
@@ -53,6 +72,10 @@ export default async function handler(
 		try {
 			const action = await insertData('feedback', feedbackDetails);
 			if (action === 'success') {
+				await axios
+					.post(`${url}/api/send-email`, data, axiosConfig)
+					.catch((e) => console.log(e));
+
 				res.status(200).json({ message: 'feedback added successfully' });
 			} else {
 				res.status(400).json({ message: 'error adding feedback' });
