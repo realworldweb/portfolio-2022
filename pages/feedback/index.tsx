@@ -25,8 +25,8 @@ import { feedback } from '../../lib/constants/data-types';
 import { formEvent } from '../../lib/constants/event-types';
 
 export async function getStaticProps() {
-	const feedback: Array<feedback> = await getData('feedback');
-
+	let feedback: Array<feedback> = await getData('feedback');
+	feedback = feedback.filter((item) => item.approved === true);
 	return {
 		props: {
 			feedback,

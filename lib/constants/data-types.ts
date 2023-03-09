@@ -16,8 +16,10 @@ interface project {
 }
 
 interface feedback {
-	name: string;
-	feedback: string | null;
+	_id?: any;
+	name: string | null;
+	feedback: string;
+	approved?: boolean;
 }
 
 interface fields {

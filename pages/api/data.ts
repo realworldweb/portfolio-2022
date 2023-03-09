@@ -10,11 +10,6 @@ const url: string = process.env.MONGOSERVER!; //authenticate
 
 const client = new mongodb.MongoClient(url);
 
-const feedbackDetails: feedback = {
-	feedback: null,
-	name: 'Anon',
-};
-
 const insertData = async (get: string, data?: any) => {
 	try {
 		await client.connect();
@@ -42,6 +37,11 @@ export default async function handler(
 		origin: '*',
 	});
 
+	const feedbackDetails: feedback = {
+		feedback: '',
+		name: 'Anon',
+	};
+
 	if (req.body) {
 		for (const key in req.body) {
 			feedbackDetails[key as keyof feedback] = req.body[key as keyof feedback];
@@ -49,9 +49,7 @@ export default async function handler(
 	} else {
 		res.status(400).json({ message: 'data error' });
 	}
-	if (feedbackDetails.feedback === null) {
-		res.status(400).json({ message: 'feedback must not be null' });
-	} else {
+	if (feedbackDetails.feedback) {
 		try {
 			const action = await insertData('feedback', feedbackDetails);
 			if (action === 'success') {
@@ -64,5 +62,7 @@ export default async function handler(
 		} finally {
 			await client.close();
 		}
+	} else {
+		res.status(400).json({ message: 'feedback must not be null' });
 	}
 }
