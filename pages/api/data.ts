@@ -1,33 +1,68 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-const { MongoClient } = require('mongodb');
+// @ts-ignore
+import NextCors from 'nextjs-cors';
+import { feedback } from '../../lib/constants/data-types';
 
-const url = process.env.mongoServer; //authenticate
+import * as mongodb from 'mongodb';
 
-let data : any;
+const url: string = process.env.MONGOSERVER!; //authenticate
 
+const client = new mongodb.MongoClient(url);
 
-const getData = async (get: string) => {
-	const client = new MongoClient(url, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	});
+const feedbackDetails: feedback = {
+	feedback: null,
+	name: 'Anon',
+};
 
+const insertData = async (get: string, data?: any) => {
 	try {
 		await client.connect();
 
-        const mount = async () => {// load certs and pass it to express route for processing.
-            console.log('ran')
-              data = await client.db('portfolio').collection(get)  
-            }
-       await mount();
-    
-       return data;
-	
+		const mount = async () => {
+			// load certs and pass it to express route for processing.
+			return await client.db('portfolio2022').collection(get).insertOne(data);
+		};
+
+		const result = await mount();
+		return result ? 'success' : 'error';
 	} catch (e) {
 		console.error(e);
 	}
-}
-	
-export {
-    getData
+};
+
+export default async function handler(
+	req: NextApiRequest,
+	res: NextApiResponse<any>
+) {
+	/*set up cors for sending cors info*/
+	await NextCors(req, res, {
+		// Options
+		methods: ['POST'],
+		origin: '*',
+	});
+
+	if (req.body) {
+		for (const key in req.body) {
+			feedbackDetails[key as keyof feedback] = req.body[key as keyof feedback];
+		}
+	} else {
+		res.status(400).json({ message: 'data error' });
+	}
+	if (feedbackDetails.feedback === null) {
+		res.status(400).json({ message: 'feedback must not be null' });
+	} else {
+		try {
+			const action = await insertData('feedback', feedbackDetails);
+			if (action === 'success') {
+				res.status(200).json({ message: 'feedback added successfully' });
+			} else {
+				res.status(400).json({ message: 'error adding feedback' });
+			}
+		} catch (err) {
+			res.status(400).json({ message: 'mongoDB error' });
+		} finally {
+			await client.close();
+		}
+	}
 }
