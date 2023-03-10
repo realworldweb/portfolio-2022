@@ -3,7 +3,6 @@
 	background-color: $blue !important;
 	min-height: 65px;
 
-
 	@media ($lg) {
 		padding: 12px 0;
 		border-bottom: 0;
@@ -12,25 +11,18 @@
 }
 
 .customNavbarScrolled {
-
 	@media ($md) {
-	  background-color: $blue;
-
+		background-color: $blue;
 	}
 }
 
 .customNavbarScrolled .standardLink {
-
 	@media ($lg) {
-	  a{
-		color: $yellow;
-	  }
-
-
+		a {
+			color: $yellow;
+		}
 	}
 }
-
-
 
 .container {
 	width: 95vw;
@@ -71,14 +63,14 @@
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
-    visibility: hidden;
+	visibility: hidden;
 	z-index: -9999;
-
 
 	@media ($lg) {
 		display: inline-flex;
 		flex-direction: row;
 		height: fit-content;
+		width: 100%;
 		align-items: center;
 		justify-content: flex-end;
 		position: relative;
@@ -207,7 +199,6 @@
 		z-index: 10;
 	}
 
-
 	.menuIcon {
 		color: $yellow;
 		transform: rotate(180deg);
@@ -228,22 +219,16 @@
 			transform: rotate(-45deg);
 		}
 	}
-	
+
 	.menu {
 		display: inline-flex;
 		position: absolute;
 		visibility: visible;
 		z-index: 9999;
-		
 	}
 
 	.standardLink {
 		opacity: 1;
 		transform: translateY(0);
 	}
-
-
-
-	
 }
-
