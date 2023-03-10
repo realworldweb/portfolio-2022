@@ -13,7 +13,7 @@ import {
 const socials = () => {
 	return (
 		<section className='d-flex flex-column w-100 bg-blue'>
-			<h4>Social profiles</h4>
+			<span className='heading4'>Social profiles</span>
 			<div className={`d-flex py-2`} style={{ gap: '10px' }}>
 				<a
 					href='https://www.codewars.com/users/realworldweb'

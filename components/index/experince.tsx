@@ -33,15 +33,15 @@ const Experince: FC<myProps> = ({ experince }) => {
 					>
 						<div className={Styles.experince}>
 							<div>
-								<h1>My Experience</h1>
+								<span className='heading1'>My Experience</span>
 								<p>Current and last role</p>
 							</div>
 
 							<div>
 								{experince.map((exp: experince, index: number) => {
-										return (
-											<div className='media-body' key={index}>
-												<Link
+									return (
+										<div className='media-body' key={index}>
+											<Link
 												href={`/roles/${exp.employer.replaceAll(' ', '-')}`}
 											>
 												<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
@@ -51,11 +51,13 @@ const Experince: FC<myProps> = ({ experince }) => {
 														fill='#2c2c2c'
 													/>
 													&nbsp;
-													<h3 className='d-block m-0'>{exp.role}</h3>
+													<span className='d-block heading3 m-0'>
+														{exp.role}
+													</span>
 													&nbsp;
-													<h4 className='position-relative mt-n1'>
+													<span className='position-relative heading4 mt-n1'>
 														({exp.employer})
-													</h4>
+													</span>
 													&nbsp;
 													<span className='position-relative mx-auto m-md-0'>
 														{exp.period}
@@ -64,22 +66,22 @@ const Experince: FC<myProps> = ({ experince }) => {
 												<p className='position-relative mx-auto mx-md-0 p-2'>
 													{exp.description}
 												</p>
-												</Link>
-											</div>
-										);
-									})}
+											</Link>
+										</div>
+									);
+								})}
 							</div>
 
 							<div>
 								<Link href='/roles'>
-									<h4
-										className={`d-flex w-100 position-relative justify-content-end align-items-center p-4 p-sm-5 ${Styles.link}`}
+									<span
+										className={`d-flex w-100 heading4 position-relative justify-content-end align-items-center p-4 p-sm-5 ${Styles.link}`}
 									>
 										More details&nbsp;
 										<span className='d-inline position-relative pb-1'>
 											&raquo;
 										</span>
-									</h4>
+									</span>
 								</Link>
 							</div>
 						</div>

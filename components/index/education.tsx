@@ -29,7 +29,7 @@ const Education: FC<myProps> = ({ education }) => {
 					>
 						<div className='education-thumb'>
 							<div>
-								<h1>My Education</h1>
+								<span className='heading1'>My Education</span>
 								<p>My latest courses and knowledge updates.</p>
 							</div>
 
@@ -37,9 +37,7 @@ const Education: FC<myProps> = ({ education }) => {
 								{education.map((edu, index) => {
 									return (
 										<div className='media-body' key={index}>
-											<Link
-												href={`/courses/${edu.title.replaceAll(' ', '-')}`}
-											>
+											<Link href={`/courses/${edu.title.replaceAll(' ', '-')}`}>
 												<div className='d-flex flex-wrap flex-md-nowrap align-items-center position-relative'>
 													<SvgLearning
 														width='2rem'
@@ -47,7 +45,9 @@ const Education: FC<myProps> = ({ education }) => {
 														fill='#2c2c2c'
 													/>
 													&nbsp;
-													<h3 className='d-block m-0'>{edu.title}</h3>
+													<span className='d-block heading3 m-0'>
+														{edu.title}
+													</span>
 													&nbsp;
 													<span className='position-relative mx-auto m-md-0'>
 														{edu.awardedBy}
@@ -62,14 +62,14 @@ const Education: FC<myProps> = ({ education }) => {
 								})}
 							</div>
 							<Link href='/courses'>
-								<h4
-									className={`d-flex w-100 position-relative justify-content-end p-4 p-sm-5 align-items-center ${Styles.link}`}
+								<span
+									className={`d-flex w-100 position-relative heading4 justify-content-end p-4 p-sm-5 align-items-center ${Styles.link}`}
 								>
 									See more&nbsp;
 									<span className='d-inline position-relative pb-1'>
 										&raquo;
 									</span>
-								</h4>
+								</span>
 							</Link>
 						</div>
 					</div>

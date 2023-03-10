@@ -16,7 +16,6 @@ interface myProps {
 }
 
 const About: FC<myProps> = ({ projects }) => {
-	
 	return (
 		<section
 			id='about'
@@ -26,7 +25,7 @@ const About: FC<myProps> = ({ projects }) => {
 				<section className={`bg-dark col-12 ${Styles.projectThumb}`}>
 					<div className={Styles.skillThumb}>
 						<div className=' section-title color-white'>
-							<h1>Projects</h1>
+							<span className='heading1'>Projects</span>
 							<p className='color-white'>Browse my latest projects.</p>
 						</div>
 
@@ -35,7 +34,8 @@ const About: FC<myProps> = ({ projects }) => {
 						>
 							{projects.map((project, index) => {
 								return (
-									<Link href={`/projects/${project.project.replaceAll(" ","-")}`}
+									<Link
+										href={`/projects/${project.project.replaceAll(' ', '-')}`}
 										className={`d-flex flex-wrap my-2 mx-auto ${Styles.project}`}
 										key={index}
 									>
@@ -48,17 +48,22 @@ const About: FC<myProps> = ({ projects }) => {
 													.toLowerCase()}-sm.webp`}
 												alt='project image'
 												width='500'
-								                height='350'
+												height='350'
 												sizes='80vw,(max-width: 768px) 20vw,
                                                        '
-												style={{width: '100%', height: 'auto', objectFit: 'cover'}}
-
+												style={{
+													width: '100%',
+													height: 'auto',
+													objectFit: 'cover',
+												}}
 											/>
 										</div>
 										<div
 											className={`d-flex flex-column align-items-center ${Styles.projectInfo}`}
 										>
-											<h5 className='text-white'>{project.project}</h5>
+											<span className='text-white heading5'>
+												{project.project}
+											</span>
 											<p>{project.description}</p>
 											<div>
 												{project.tech.map((tech, index) => {
@@ -78,17 +83,17 @@ const About: FC<myProps> = ({ projects }) => {
 							})}
 						</div>
 						<div>
-								<Link href='/projects'>
-									<h4
-										className={`d-flex w-100 position-relative justify-content-end align-items-center ${Styles.link}`}
-									>
-										See more&nbsp;
-										<span className='d-inline position-relative pb-1'>
-											&raquo;
-										</span>
-									</h4>
-								</Link>
-							</div>
+							<Link href='/projects'>
+								<span
+									className={`d-flex w-100 position-relative heading4 justify-content-end align-items-center ${Styles.link}`}
+								>
+									See more&nbsp;
+									<span className='d-inline position-relative pb-1'>
+										&raquo;
+									</span>
+								</span>
+							</Link>
+						</div>
 					</div>
 				</section>
 			</div>

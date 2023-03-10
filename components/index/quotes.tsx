@@ -52,7 +52,7 @@ const Quotes: FC<myProps> = ({ feedback }) => {
 					</div>
 					<Link
 						className={`position-absolute ${Styles.pageLink}`}
-						href='feedback'
+						href='/feedback'
 					>
 						See More&nbsp;
 						<span className='d-inline position-relative pb-1'>&raquo;</span>
