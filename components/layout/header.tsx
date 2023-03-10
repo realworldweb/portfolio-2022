@@ -120,28 +120,36 @@ function Header() {
 							loaded && asPath === '/projects' ? Styles.activeLink : ''
 						}`}
 					>
-						<Link href='/projects'>Projects</Link>
+						<Link href='/projects' onClick={toggleNavbar}>
+							Projects
+						</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
 							loaded && asPath === '/courses' ? Styles.activeLink : ''
 						}`}
 					>
-						<Link href='/courses'>Learning</Link>
+						<Link href='/courses' onClick={toggleNavbar}>
+							Learning
+						</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
 							loaded && asPath === '/roles' ? Styles.activeLink : ''
 						}`}
 					>
-						<Link href='/roles'>Experince</Link>
+						<Link href='/roles' onClick={toggleNavbar}>
+							Experince
+						</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
 							loaded && asPath === '/contact' ? Styles.activeLink : ''
 						}`}
 					>
-						<a href='#contact'>Contact</a>
+						<a href='#contact' onClick={toggleNavbar}>
+							Contact
+						</a>
 					</span>
 					<span className={`${Styles.standardLink}`}>
 						<a
