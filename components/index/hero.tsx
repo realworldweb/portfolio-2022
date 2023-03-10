@@ -21,25 +21,38 @@ function Hero() {
 							sizes='100vw
 							(max-width: 768px) 80vw,
               (max-width: 1200px) 50vw,'
-			  style={{objectFit: 'cover'}}
-                         fill
-
-						priority/>
+							style={{ objectFit: 'cover' }}
+							fill
+							priority
+						/>
 					</div>
 
 					<div className='col-md-6 p-0'>
 						<div className={Styles.tagline}>
 							<div className='section-title mt-2'>
 								<h1 className='d-block'>
-						Hello, I am <strong>Paul</strong> a frontend focused fullstack
+									Hello, I am <strong>Paul</strong> a frontend focused fullstack
 									developer.
 								</h1>
 								<p className='d-block'>
-									I am a frontend focused fullstack developer based in northern Ireland with a number of years experince working with HTML, CSS and Javascript.
-                                             Most recently I have been using react with next.js to build fast immersive frontend experinces which can run in serverless enviorments like Netlify.
+									I am a frontend focused fullstack developer based in northern
+									Ireland with a number of years experince working with HTML,
+									CSS and Javascript. Most recently I have been using react with
+									next.js to build fast immersive frontend experinces which can
+									run in serverless enviorments like Netlify.
 								</p>
 								<p className='d-block'>
-								In my spare time I like to keep active in the local tech community and regularly attend our local tech meetup Newry digital. I have a vivid imagination and a thirst for all things fanatsy and sci-fiction.
+									In my spare time I like to keep active in the local tech
+									community and regularly attend our local tech meetup{' '}
+									<a
+										href='https://newrydigital.com/'
+										rel='no-referer'
+										className='text-decoration-none text-primary'
+									>
+										Newry digital
+									</a>
+									. I have a vivid imagination and a thirst for all things
+									fanatsy and sci-fiction.
 								</p>
 
 								<a
