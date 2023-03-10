@@ -217,7 +217,7 @@ const Contact = () => {
 						</div>
 
 						<div>
-							<h3 className='color-white'>Contact.</h3>
+							<span className='heading3 color-white'>Contact.</span>
 							<p>
 								<SvgPhone width='1.3rem' height='1.3rem' />
 								&nbsp;07850544269
