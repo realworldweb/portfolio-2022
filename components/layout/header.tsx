@@ -19,9 +19,8 @@ function Header() {
 	const [loaded, setLoaded] = useState<boolean>(false);
 
 	useEffect(() => {
-       setLoaded(prev => prev === true ? prev : true) ;
-    }, []);
-
+		setLoaded((prev) => (prev === true ? prev : true));
+	}, []);
 
 	const navToggle = useRef<HTMLDivElement>(null);
 
@@ -36,10 +35,11 @@ function Header() {
 	};
 
 	return (
-		<div className={`navbar w-100 bg-light ${Styles.customNavbar}`} ref={navToggle}>
-			<div
-				className={`justify-content-start mx-auto ${Styles.container}`}
-			>
+		<div
+			className={`navbar w-100 bg-light ${Styles.customNavbar}`}
+			ref={navToggle}
+		>
+			<div className={`justify-content-start mx-auto ${Styles.container}`}>
 				<div className='d-flex position-relative w-100 justify-content-between'>
 					<button
 						className={`d-inline-block d-lg-none position-absolute ${Styles.navbarToggle}`}
@@ -95,7 +95,12 @@ function Header() {
 						<span />
 						<span className={Styles.splash} />
 					</button>
-					<Link href='/' className={`d-inline-flex position-relative ml-2 ${Styles.customBrand} ${scroll > 0 ? Styles.customBrandSmall: ""}`}>
+					<Link
+						href='/'
+						className={`d-inline-flex position-relative ml-2 ${
+							Styles.customBrand
+						} ${scroll > 0 ? Styles.customBrandSmall : ''}`}
+					>
 						RealworldWeb
 					</Link>
 				</div>
@@ -106,7 +111,9 @@ function Header() {
 							loaded && asPath === '/' ? Styles.activeLink : ''
 						}`}
 					>
-						<Link href='/'>Home</Link>
+						<Link href='/' onClick={toggleNavbar}>
+							Home
+						</Link>
 					</span>
 					<span
 						className={`${Styles.standardLink} ${
@@ -136,11 +143,15 @@ function Header() {
 					>
 						<a href='#contact'>Contact</a>
 					</span>
-					<span
-						className={`${Styles.standardLink}`} 
-
-					>
-						<a className='d-flex w-100 align-items-center justify-content-center' href='/cv.docx' download><FileDownload width={"1.7rem"} height={"1.7rem"}/>Download CV</a>
+					<span className={`${Styles.standardLink}`}>
+						<a
+							className='d-flex w-100 align-items-center justify-content-center'
+							href='/cv.docx'
+							download
+						>
+							<FileDownload width={'1.7rem'} height={'1.7rem'} />
+							Download CV
+						</a>
 					</span>
 				</nav>
 			</div>

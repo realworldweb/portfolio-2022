@@ -103,6 +103,7 @@ const Feedback: NextPageWithLayout<MyProps> = ({ feedback }) => {
 									id='feedback'
 									name='feedback'
 									onChange={(e) => setUserFeedback(e.target.value)}
+									required
 								/>
 								<label htmlFor='name'>Name</label>
 								<input
