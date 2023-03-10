@@ -100,18 +100,18 @@ const Contact = () => {
 						<div className={`d-flex pt-2 flex-column ${Styles.contactForm}`}>
 							{emailSent === 'success' ? (
 								<>
-									<h3 className='d-flex mx-auto'>
+									<span className='d-flex heading3 mx-auto'>
 										Email sent successfully
-									</h3>
+									</span>
 									<p className='d-flex mx-auto'>
 										your mail has been sent to paulrooney60@gmail.com
 									</p>
 								</>
 							) : emailSent === 'working' ? (
 								<>
-									<h3 className='d-flex mx-auto'>
+									<span className='d-flex heading3 mx-auto'>
 										Sending your Email
-									</h3>
+									</span>
 									<div className='d-flex flex-column align-items-center position-relative w-75 mx-auto'>
 										Please wait
 										<PulsingGrid />
@@ -120,10 +120,8 @@ const Contact = () => {
 							) : (
 								<>
 									<div className='d-flex flex-column position-relative'>
-										<h1>Say hello...</h1>
-										<p>
-											Drop a message below to reach my inbox.
-										</p>
+										<span className='heading1'>Say hello...</span>
+										<p>Drop a message below to reach my inbox.</p>
 									</div>
 
 									<div id='contact-form'>
@@ -210,11 +208,11 @@ const Contact = () => {
 									</div>
 								</>
 							)}
-											</div>
-											</div>
+						</div>
+					</div>
 					<div className={`position-relative ${Styles.contactThumb}`}>
 						<div>
-							<h3 className='color-white'>Base camp</h3>
+							<span className='heading3 color-white'>Base camp</span>
 							<p>Warrenpoint, co.Down , northern Ireland</p>
 						</div>
 
@@ -233,7 +231,7 @@ const Contact = () => {
 									</a>
 								) : null}
 							</p>
-							<h4>Social links</h4>
+							<span className='heading4'>Social links</span>
 							<p className='d-flex' style={{ gap: '10px' }}>
 								<a
 									href='https://github.com/realworldweb'
@@ -264,7 +262,6 @@ const Contact = () => {
 									target='_blank'
 									rel='noreferrer'
 									aria-label='hackerrank'
-
 								>
 									<SvgHackerrank width='2rem' height='2rem' />
 								</a>
@@ -273,16 +270,15 @@ const Contact = () => {
 									target='_blank'
 									rel='noreferrer'
 									aria-label='leetcode'
-
 								>
 									<SvgLeetcode width='2rem' height='2rem' />
 								</a>
 							</p>
 						</div>
-								</div>
+					</div>
 					<div className={`position-relative mx-auto ${Styles.contactThumb}`}>
 						<div>
-							<h2 className='color-white'>Realworldweb</h2>
+							<span className='heading2 color-white'>Realworldweb</span>
 						</div>
 
 						<nav
@@ -304,7 +300,7 @@ const Contact = () => {
 								</a>
 							) : null}
 						</nav>
-								</div>
+					</div>
 				</div>
 			</div>
 		</section>
