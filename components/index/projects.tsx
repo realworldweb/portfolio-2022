@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 /*styles*/
-import Styles from '../../styles/modules/about.module.css';
+import Styles from '../../styles/modules/projectSection.module.css';
 import { project } from '../../lib/constants/data-types';
 
 /*images*/
@@ -15,7 +15,7 @@ interface myProps {
 	projects: Array<project>;
 }
 
-const About: FC<myProps> = ({ projects }) => {
+const ProjectSection: FC<myProps> = ({ projects }) => {
 	return (
 		<section
 			id='about'
@@ -25,12 +25,12 @@ const About: FC<myProps> = ({ projects }) => {
 				<section className={`bg-dark col-12 ${Styles.projectThumb}`}>
 					<div className={Styles.skillThumb}>
 						<div className=' section-title color-white'>
-							<span className='heading1'>Projects</span>
+							<span className={`text-white ${Styles.title}`}>Projects</span>
 							<p className='color-white'>Browse my latest projects.</p>
 						</div>
 
 						<div
-							className={`d-flex color-white flex-wrap ${Styles.skillThumb}`}
+							className={`d-flex color-white mx-auto flex-wrap ${Styles.skillThumb}`}
 						>
 							{projects.map((project, index) => {
 								return (
@@ -40,7 +40,7 @@ const About: FC<myProps> = ({ projects }) => {
 										key={index}
 									>
 										<div
-											className={`d-inline mx-auto mb-2 position-relative ${Styles.projectImage}`}
+											className={`d-flex mb-2 position-relative ${Styles.projectImage}`}
 										>
 											<Image
 												src={`/${project.project
@@ -61,10 +61,10 @@ const About: FC<myProps> = ({ projects }) => {
 										<div
 											className={`d-flex flex-column align-items-center ${Styles.projectInfo}`}
 										>
-											<span className='text-white heading5'>
+											<strong className='text-white heading5'>
 												{project.project}
-											</span>
-											<p>{project.description}</p>
+											</strong>
+											<p className='text-center'>{project.description}</p>
 											<div>
 												{project.tech.map((tech, index) => {
 													return (
@@ -101,4 +101,4 @@ const About: FC<myProps> = ({ projects }) => {
 	);
 };
 
-export default About;
+export default ProjectSection;

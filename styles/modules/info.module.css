@@ -2,47 +2,48 @@
 	background-color: #e9724c;
 }
 
-
-.education{
-    background-color: #E3AE57;
+.education {
+	background-color: #e3ae57;
 }
 
 .content {
 	left: 3%;
 
-    p,h1,h3,h4{
-        color: #2c2c2c;
-    }
+	p,
+	h1,
+	h3,
+	h4 {
+		color: #2c2c2c;
+	}
 
 	h3 {
 		font-size: 1.3rem;
 	}
 
-    span{
-        color: #2c2c2c;
-        font-weight: 900;
-        font-size: 0.8rem; 
-
-    }
+	span {
+		color: #2c2c2c;
+		font-weight: 900;
+		font-size: 0.8rem;
+	}
 
 	p {
 		left: 5%;
 		max-width: 85%;
-        font-size: 0.8rem;
-        opacity: 0.8;
+		font-size: 0.8rem;
+		opacity: 0.8;
 	}
 }
 
-.link{
-    color: #633;
-    font-weight: 900;
+.link {
+	color: #633;
+	font-weight: 900;
 
-    &:hover{
-        color: #f1e2d7;
-    }
-    span{
-        font-weight: inherit;
-        font-size: 1.6rem;
-        color: inherit;
-    }
+	&:hover {
+		color: #f1e2d7;
+	}
+	span {
+		font-weight: inherit;
+		font-size: 1.6rem;
+		color: inherit;
+	}
 }

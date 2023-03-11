@@ -29,8 +29,8 @@ const Education: FC<myProps> = ({ education }) => {
 					>
 						<div className='education-thumb'>
 							<div>
-								<span className='heading1'>My Education</span>
-								<p>My latest courses and knowledge updates.</p>
+								<strong className='heading1'>My Education</strong>
+								<p className='mb-3 subheading'>My latest learning</p>
 							</div>
 
 							<div>

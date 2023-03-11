@@ -14,8 +14,8 @@ import Layout from '../layouts/main';
 
 /*components*/
 import Hero from '../components/index/hero';
-const About = dynamic(
-	() => import(/* webpackChunkName: "about" */ '../components/index/about')
+const ProjectSection = dynamic(
+	() => import(/* webpackChunkName: "about" */ '../components/index/projects')
 );
 const Services = dynamic(
 	() =>
@@ -99,7 +99,7 @@ const Home: NextPageWithLayout<MyProps> = ({
 			</Head>
 			<main>
 				<Hero />
-				<About projects={projects} />
+				<ProjectSection projects={projects} />
 				<Services />
 				<Experince experince={experince} />
 				<Education education={education} />

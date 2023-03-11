@@ -57,7 +57,7 @@ function Hero() {
 
 								<a
 									href='#about'
-									className='section-btn btn btn-success'
+									className={`section-btn_dark`}
 									data-wow-delay='1.4s'
 								>
 									Find out more

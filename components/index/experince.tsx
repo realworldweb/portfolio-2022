@@ -33,8 +33,8 @@ const Experince: FC<myProps> = ({ experince }) => {
 					>
 						<div className={Styles.experince}>
 							<div>
-								<span className='heading1'>My Experience</span>
-								<p>Current and last role</p>
+								<strong className='heading1'>My Experience</strong>
+								<p className='mb-3 subheading'>Current and last role</p>
 							</div>
 
 							<div>
