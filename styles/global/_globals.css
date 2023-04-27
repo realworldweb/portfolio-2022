@@ -8,8 +8,10 @@ body {
 html,
 body {
 	width: 100%;
-	max-width: 1900px;
+	max-width: 1700px;
 	height: fit-content;
+	margin: 0 auto;
+	padding: 0;
 }
 
 /*---------------------------------------
